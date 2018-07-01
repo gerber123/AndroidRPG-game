@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tlo"
+    tools:context="pl.marcinos.expfor2.IntroActivity.SignUp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_centerInParent="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edtNewUserName"
+            android:hint="Nazwa użytkownika"
+            android:textColorHint="@color/colorPrimary"
+            android:textSize="24dp"
+            app:met_baseColor="@color/colorPodswietlenia"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/colorPrimary"
+            app:met_singleLineEllipsis="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edtNewPassword"
+            android:hint="Hasło"
+            android:inputType="textPassword"
+            android:textColorHint="@color/colorPodswietlenia"
+            android:textSize="24dp"
+            app:met_baseColor="@color/colorPodswietlenia"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/colorPodswietlenia"
+            app:met_singleLineEllipsis="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edtNewEmail"
+            android:hint="Email"
+            android:textColorHint="@color/colorPodswietlenia"
+            android:textSize="24dp"
+            android:inputType="textEmailAddress"
+            app:met_baseColor="@color/colorPodswietlenia"
+            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/colorPodswietlenia"
+            app:met_singleLineEllipsis="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btnSignUp"
+        android:text="Przejdź Dalej"
+        android:layout_marginRight="8dp"
+        android:background="@color/colorPodswietlenia"
+        android:textColor="@android:color/white"
+
+        android:layout_margin="8dp"
+        android:layout_alignParentBottom="true"
+
+
+
+
+        />
+</RelativeLayout>

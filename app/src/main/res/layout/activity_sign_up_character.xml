@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tlo"
+    tools:context="pl.marcinos.expfor2.IntroActivity.SignUpCharacter">
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/relativeLayout10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="10"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+
+
+
+
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/wojownik"
+                android:layout_width="310dp"
+                android:layout_height="690dp"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="26dp"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="26dp"
+                android:layout_marginRight="26dp"
+                android:layout_marginTop="26dp"
+
+                app:cardBackgroundColor="@color/cardview_dark_background"
+                app:cardElevation="8dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="38dp"
+                >
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:src="@drawable/wojs"
+                        android:textColor="@color/colorPodswietlenia"
+
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+
+
+                        />
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="300dp"
+                        android:src="@drawable/wojownik"
+                        android:layout_gravity="center_horizontal"/>
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="200dp"
+                        android:text="Wojownik opancerzony jak czołg, uzbrojony w potężne miecze, ma wpojony tylko jeden cel w życiu - wytępienie wszelakiego zła. Specjalista od zwalczania nieumarłych, zdecydowanie najwytrzymalszy bohater ze wszystkich"
+                        android:textColor="@color/colorForTheExp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:padding="10dp"
+
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        />
+
+                    <Button
+                        android:layout_marginBottom="15dp"
+                        android:layout_marginTop="15dp"
+                        android:id="@+id/buttonWybierzWojownika"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@color/colorPodswietlenia"
+                        android:text="Wybieram"/>
+
+                </LinearLayout>
+
+                </HorizontalScrollView>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:id="@+id/Mag"
+                android:layout_width="310dp"
+                android:layout_height="690dp"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="26dp"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="26dp"
+                android:layout_marginRight="26dp"
+                android:layout_marginTop="26dp"
+                app:cardBackgroundColor="@color/cardview_dark_background"
+                app:cardElevation="8dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="38dp"
+                >
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:src="@drawable/czarodziej"
+                        android:textColor="@color/colorPodswietlenia"
+
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+
+
+                        />
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="300dp"
+                        android:src="@drawable/magavatar"
+                        android:layout_gravity="center_horizontal"/>
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="200dp"
+                        android:text="Czarodzieje dzięki swej wrodzonej inteligencji oraz wiedzy są prawdziwą maszyną do zabijania obrzucając wrogów kulami ognia, okruchami lodu lub magicznymi pociskami, gdy tylko takowi znajdą się w zasięgu ich wzroku."
+                        android:textColor="@color/colorForTheExp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:padding="10dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        />
+                    <Button
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:id="@+id/buttonWybierzMaga"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@color/colorPodswietlenia"
+                        android:text="Wybieram"/>
+
+                </LinearLayout>
+
+                </HorizontalScrollView>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+
+                android:id="@+id/ARCHER"
+                android:layout_width="310dp"
+                android:layout_height="690dp"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="26dp"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="26dp"
+                android:layout_marginRight="26dp"
+                android:layout_marginTop="26dp"
+                app:cardBackgroundColor="@color/cardview_dark_background"
+                app:cardElevation="8dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="38dp"
+                >
+                <HorizontalScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:src="@drawable/lucznika"
+                        android:textColor="@color/colorPodswietlenia"
+
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+
+
+                        />
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="300dp"
+                        android:src="@drawable/lucznikawatar"
+                        android:layout_gravity="center_horizontal"/>
+
+                    <TextView
+                        android:layout_width="300dp"
+                        android:layout_height="200dp"
+                        android:text="Elf, Łucznik w walce mistrzowsko strzela z łuku. Siła, wytrzymałość i szybkość w połączeniu z mocnym strzałem wspomaganym przez czary tworzą z nich bohaterów, który w pojedynkę potrafią pozbyć się nawet bardzo silnych przeciwników."
+                        android:padding="10dp"
+                        android:textColor="@color/colorForTheExp"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        />
+                    <Button
+                        android:layout_marginTop="15dp"
+                        android:layout_marginBottom="15dp"
+                        android:id="@+id/buttonWybierzLucznika"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:background="@color/colorPodswietlenia"
+                        android:text="Wybieram"/>
+
+
+                </LinearLayout>
+
+                </HorizontalScrollView>
+            </android.support.v7.widget.CardView>
+
+
+
+
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+</android.support.constraint.ConstraintLayout>

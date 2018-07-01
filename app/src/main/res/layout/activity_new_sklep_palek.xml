@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tlo"
+    tools:context="pl.marcinos.expfor2.Paladyn.Menu.NewSklepPalek">
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/relativeLayout10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="10"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+            <android.support.v7.widget.CardView
+                android:id="@+id/potion"
+                android:layout_width="180dp"
+                android:layout_height="250dp"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="16dp"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:cardBackgroundColor="@color/cardview_dark_background"
+                app:cardElevation="8dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="8dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/potion"
+                        android:layout_gravity="center_horizontal"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Hp Potion"
+
+                        android:textColor="@color/colorPodswietlenia"
+                        android:textSize="15sp"
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="50 golda"
+
+                        android:textColor="@color/colorForTheExp"
+                        android:textSize="15sp"
+
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+                        />
+                    <Button
+                        android:id="@+id/buttonBandaz"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:text="Kup"/>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/kamien"
+                android:layout_width="180dp"
+                android:layout_height="250dp"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="16dp"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:cardBackgroundColor="@color/cardview_dark_background"
+                app:cardElevation="8dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="8dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/kamien"
+                        android:layout_gravity="center_horizontal"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Kamień"
+
+                        android:textColor="@color/colorPodswietlenia"
+                        android:textSize="15sp"
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="150 golda"
+
+                        android:textColor="@color/colorForTheExp"
+                        android:textSize="15sp"
+
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+                        />
+                    <Button
+                        android:id="@+id/buttonWymien"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:text="Sprzedaj"/>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/eq"
+                android:layout_width="180dp"
+                android:layout_height="250dp"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="16dp"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:cardBackgroundColor="@color/cardview_dark_background"
+                app:cardElevation="8dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="8dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/zbroja"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/zbroja"
+                        android:layout_gravity="center_horizontal"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Wyposażenie"
+
+                        android:textColor="@color/colorPodswietlenia"
+                        android:textSize="15sp"
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+
+
+                        />
+                    <TextView
+                        android:id="@+id/kosztEQ"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="350 golda"
+                        android:textColor="@color/colorForTheExp"
+                        android:textSize="15sp"
+
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+                        />
+                    <TextView
+                        android:id="@+id/LVL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lvl:10"
+
+                        android:textColor="@color/colorForTheExp"
+                        android:textSize="15sp"
+
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+                        />
+                    <Button
+                        android:id="@+id/buttonEq"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:text="Kup"/>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/monument"
+                android:layout_width="180dp"
+                android:layout_height="250dp"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="16dp"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:cardBackgroundColor="@color/cardview_dark_background"
+                app:cardElevation="8dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="8dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/artefakt"
+                        android:layout_gravity="center_horizontal"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Monument"
+
+                        android:textColor="@color/colorPodswietlenia"
+                        android:textSize="15sp"
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5000 golda"
+
+                        android:textColor="@color/colorForTheExp"
+                        android:textSize="15sp"
+
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+                        />
+                    <Button
+                        android:id="@+id/buttonSprzedajMon"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        style="@style/Widget.AppCompat.Button.Colored"
+                        android:text="Sprzedaj"/>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+
+
+
+
+
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+
+        <TextView
+            android:id="@+id/textGoldd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+
+            android:text="Twój gold: "
+
+
+            android:padding="5dp"
+            android:textColor="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/textItemm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+
+            android:layout_marginTop="10dp"
+            android:text="Twoje Itemy: "
+            android:padding="5dp"
+            android:textColor="@color/colorAccent" />
+        <TextView
+            android:id="@+id/textMonument"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+
+            android:layout_marginTop="10dp"
+            android:text="Twoje Monemunty: "
+            android:padding="5dp"
+            android:textColor="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/textKlucz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+
+            android:layout_marginTop="10dp"
+            android:text="Klucz: "
+            android:padding="5dp"
+            android:textColor="@color/colorAccent" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#797976</color>
+    <color name="colorForTheExpo">#ca0000</color>
+    <color name="colorForTheExp">#40000b</color>
+    <color name="colorTekstuu">#000000</color>
+    <color name="colorTekstu">#ffbb00</color>
+    <color name="colorPodswietlenia">#f7c600</color>
+    <color name="colorRamekMenuU">#953d2f97</color>
+    <color name="colorRamekMenu">#958c7300</color>
+    <color name="colorCardView">#93f20000</color>
+    <color name="colorCardVieww">#595957</color>
+    <color name="colorCardQuest">#8a868635</color>
+
+    <color name="black_overlay">#66000000</color>
+</resources>

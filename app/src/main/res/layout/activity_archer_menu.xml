@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/tlomenu"
+    tools:context="pl.marcinos.expfor2.Archer.Menu.ArcherMenuActivity"
+   >
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="733dp"
+        android:orientation="vertical"
+        android:background="@drawable/tlomenu"
+
+        android:weightSum="10"
+        tools:context="pl.marcinos.expfor2.Mag.Menu.MagNewMenuActivity"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="2">
+            <!--<TextView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/textPoczatkowy"-->
+            <!--android:text="Exp For Two"-->
+            <!--android:textSize="65sp"-->
+            <!--android:textStyle="bold|italic"-->
+
+            <!--android:layout_centerInParent="true"-->
+            <!--android:textColor="@color/colorPodswietlenia"-->
+
+            <!--/>-->
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/expfortwo"
+                android:layout_marginTop="50dp"/>
+
+
+        </RelativeLayout>
+
+        <GridLayout
+            android:id="@+id/Grid"
+            android:layout_width="match_parent"
+            android:layout_weight="8"
+            android:layout_height="0dp"
+
+            android:columnCount="2"
+            android:rowCount="4"
+            android:alignmentMode="alignMargins"
+            android:columnOrderPreserved="false"
+            android:padding="14dp"
+
+            >
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/postac"
+
+                app:cardBackgroundColor="@color/colorRamekMenu"
+
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="16dp"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="18dp"
+                >
+                <android.support.v7.widget.CardView
+
+
+                    app:cardBackgroundColor="@color/cardview_dark_background"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    app:cardElevation="18dp"
+                    app:cardCornerRadius="18dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_margin="16dp"
+
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="108dp"
+                            android:layout_height="104dp"
+                            android:src="@drawable/lucznikawatar"
+                            android:layout_gravity="center_horizontal"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Postać"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPodswietlenia"
+                            android:textSize="15sp"
+                            android:layout_marginLeft="35dp"
+                            android:gravity="center_vertical"
+                            />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:id="@+id/ekwipunek"
+
+                app:cardBackgroundColor="@color/colorRamekMenu"
+
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="16dp"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="18dp"
+                >
+                <android.support.v7.widget.CardView
+
+
+                    app:cardBackgroundColor="@color/cardview_dark_background"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    app:cardElevation="18dp"
+                    app:cardCornerRadius="18dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_margin="16dp"
+
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="108dp"
+                            android:layout_height="104dp"
+                            android:src="@drawable/eq"
+                            android:layout_gravity="center_horizontal"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Kowal"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPodswietlenia"
+                            android:textSize="15sp"
+                            android:layout_marginLeft="35dp"
+                            android:gravity="center_vertical"
+                            />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+                android:id="@+id/przygoda"
+
+                app:cardBackgroundColor="@color/colorRamekMenu"
+
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="16dp"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="18dp"
+                >
+                <android.support.v7.widget.CardView
+
+
+                    app:cardBackgroundColor="@color/cardview_dark_background"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    app:cardElevation="18dp"
+                    app:cardCornerRadius="18dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_margin="16dp"
+
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="108dp"
+                            android:layout_height="104dp"
+                            android:src="@drawable/przygoda"
+                            android:layout_gravity="center_horizontal"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Przygoda"
+                            android:layout_gravity="center"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPodswietlenia"
+                            android:textSize="15sp"
+
+                            android:gravity="center_vertical"
+                            />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/pvp"
+
+                app:cardBackgroundColor="@color/colorRamekMenu"
+
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="16dp"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="18dp"
+                >
+                <android.support.v7.widget.CardView
+
+
+                    app:cardBackgroundColor="@color/cardview_dark_background"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    app:cardElevation="18dp"
+                    app:cardCornerRadius="18dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_margin="16dp"
+
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="108dp"
+                            android:layout_height="104dp"
+                            android:src="@drawable/pvp"
+                            android:layout_gravity="center_horizontal"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PVP"
+                            android:layout_gravity="center"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPodswietlenia"
+                            android:textSize="15sp"
+
+                            android:gravity="center_vertical"
+                            />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView>    <android.support.v7.widget.CardView
+            android:id="@+id/achievement"
+
+            app:cardBackgroundColor="@color/colorRamekMenu"
+
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_columnWeight="1"
+            android:layout_marginBottom="16dp"
+            android:layout_rowWeight="1"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            app:cardElevation="8dp"
+            app:cardCornerRadius="18dp"
+            >
+            <android.support.v7.widget.CardView
+
+
+                app:cardBackgroundColor="@color/cardview_dark_background"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+                app:cardElevation="18dp"
+                app:cardCornerRadius="18dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_margin="16dp"
+
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="108dp"
+                        android:layout_height="104dp"
+                        android:src="@drawable/achievements"
+                        android:layout_gravity="center_horizontal"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ranking"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:textColor="@color/colorPodswietlenia"
+                        android:textSize="15sp"
+
+                        android:gravity="center_vertical"
+                        />
+
+                </LinearLayout>
+
+            </android.support.v7.widget.CardView>
+        </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/sklep"
+
+                app:cardBackgroundColor="@color/colorRamekMenu"
+
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="16dp"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:cardElevation="8dp"
+                app:cardCornerRadius="18dp"
+                >
+                <android.support.v7.widget.CardView
+
+
+                    app:cardBackgroundColor="@color/cardview_dark_background"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+
+                    app:cardElevation="18dp"
+                    app:cardCornerRadius="18dp"
+                    >
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_margin="16dp"
+
+                        android:orientation="vertical"
+                        android:layout_height="wrap_content">
+                        <ImageView
+                            android:layout_width="108dp"
+                            android:layout_height="104dp"
+                            android:src="@drawable/shop"
+                            android:layout_gravity="center_horizontal"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Sklep"
+                            android:layout_gravity="center"
+                            android:textAlignment="center"
+                            android:textColor="@color/colorPodswietlenia"
+                            android:textSize="15sp"
+
+                            android:gravity="center_vertical"
+                            />
+
+                    </LinearLayout>
+
+                </android.support.v7.widget.CardView>
+            </android.support.v7.widget.CardView>
+
+
+        </GridLayout>
+    </LinearLayout>
+</ScrollView>

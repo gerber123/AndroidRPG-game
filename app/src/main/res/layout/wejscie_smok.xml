@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_margin="8dp"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="16dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_width="wrap_content"
+    android:layout_marginTop="30dp"
+    android:layout_height="520dp"
+    >
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="520dp"
+        android:orientation="vertical"
+        android:background="@drawable/tloenchant"
+
+
+
+        >
+
+        <ImageView
+
+            android:id="@+id/imageView3"
+            android:layout_width="250dp"
+            android:layout_gravity="center"
+            android:layout_height="250dp"
+            android:padding="10dp"
+            android:src="@drawable/antharas"
+            android:layout_marginTop="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+
+            />
+        <TextView
+            android:id="@+id/textNazwisko"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textImie"
+            android:layout_below="@+id/textImie"
+            android:layout_gravity="center"
+            android:foregroundGravity="center"
+            android:textAlignment="gravity"
+            android:textColor="@color/colorTekstu"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:text="Jama Antharasa"
+            android:textSize="25sp" />
+
+
+
+
+
+        <TextView
+            android:id="@+id/textOcena"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textWiek"
+            android:layout_below="@+id/textWiek"
+            android:layout_gravity="center"
+            android:textColor="@color/colorForTheExpo"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:text="Aby wejść i zmierzyć się z Antharasaem, który zasiał zło w świecie Dragon Hunter, musisz posiadać klucz który trzymają potwory na Krańcu światów lub wykonać zadanie i dostać go od szalonego nożownika "
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/klucz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textWiek"
+            android:layout_below="@+id/textWiek"
+            android:layout_gravity="center"
+            android:textColor="@color/colorAccent"
+            android:padding="5dp"
+            android:textStyle="bold"
+            android:text="Klucz: "
+            android:textSize="15sp" />
+
+
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>

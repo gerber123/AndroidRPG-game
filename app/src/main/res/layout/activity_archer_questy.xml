@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tlo"
+    tools:context="pl.marcinos.expfor2.Archer.Walka.Questy.ArcherQuesty">
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/relativeLayout10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="10"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/potion"
+                android:layout_width="300dp"
+
+                android:layout_height="420dp"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="16dp"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="26dp"
+                android:layout_marginRight="26dp"
+                app:cardBackgroundColor="@color/cardview_dark_background"
+                app:cardElevation="18dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="18dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="250dp"
+                        android:src="@drawable/wzgorzafaraona"
+                        android:layout_gravity="center_horizontal"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Zaginiony Kot"
+                        android:gravity="center"
+                        android:textColor="@color/colorPodswietlenia"
+                        android:textSize="25sp"
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lokacja: Wzgórza Faraona"
+                        android:gravity="center"
+                        android:textColor="@color/colorPodswietlenia"
+                        android:textSize="15sp"
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+
+
+                        />
+                    <TextView
+                        android:id="@+id/wzgorzaFaraonaStan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Stan: Nie wykonany"
+
+                        android:textColor="@color/colorForTheExp"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+                        />
+                    <Button
+                        android:id="@+id/buttonWzgorzaFaraona"
+                        android:layout_width="100dp"
+                        android:background="@color/colorPodswietlenia"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+
+                        android:text="Sprawdź"/>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+
+                android:layout_width="300dp"
+                android:layout_height="420dp"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="16dp"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="26dp"
+                android:layout_marginRight="26dp"
+                app:cardBackgroundColor="@color/cardview_dark_background"
+                app:cardElevation="18dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="18dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="250dp"
+                        android:src="@drawable/zatrutawyspa"
+                        android:layout_gravity="center_horizontal"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Oblężenie Orców"
+                        android:gravity="center"
+                        android:textColor="@color/colorPodswietlenia"
+                        android:textSize="25sp"
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+
+
+                        />
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lokacja: Zatruta Wyspa"
+                        android:gravity="center"
+                        android:textColor="@color/colorPodswietlenia"
+                        android:textSize="15sp"
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+
+
+                        />
+                    <TextView
+                        android:id="@+id/zatrutaWyspaStan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Stan: Nie wykonany"
+
+                        android:textColor="@color/colorForTheExp"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+                        />
+                    <Button
+                        android:id="@+id/buttonZatrutaWyspa"
+                        android:layout_width="100dp"
+                        android:background="@color/colorPodswietlenia"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+
+                        android:text="Sprawdź"/>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+
+                android:layout_width="300dp"
+                android:layout_height="420dp"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="16dp"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="26dp"
+                android:layout_marginRight="26dp"
+                app:cardBackgroundColor="@color/cardview_dark_background"
+                app:cardElevation="18dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="18dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="250dp"
+                        android:src="@drawable/katakumby"
+                        android:layout_gravity="center_horizontal"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Szczątki Gwardii"
+                        android:gravity="center"
+                        android:textColor="@color/colorPodswietlenia"
+                        android:textSize="25sp"
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lokacja: Katakumby"
+                        android:gravity="center"
+                        android:textColor="@color/colorPodswietlenia"
+                        android:textSize="15sp"
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+
+
+                        />
+                    <TextView
+                        android:id="@+id/KatakumbyStan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Stan: Nie wykonany"
+
+                        android:textColor="@color/colorForTheExp"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+                        />
+                    <Button
+                        android:id="@+id/buttonKatakumby"
+                        android:layout_width="100dp"
+                        android:background="@color/colorPodswietlenia"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+
+                        android:text="Sprawdź"/>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+
+
+
+            <android.support.v7.widget.CardView
+
+                android:layout_width="300dp"
+                android:layout_height="420dp"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="16dp"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="26dp"
+                android:layout_marginRight="26dp"
+                app:cardBackgroundColor="@color/cardview_dark_background"
+                app:cardElevation="18dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="18dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="250dp"
+                        android:src="@drawable/kraniecswiatow"
+                        android:layout_gravity="center_horizontal"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Zaginiony Rybak"
+                        android:gravity="center"
+                        android:textColor="@color/colorPodswietlenia"
+                        android:textSize="25sp"
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lokacja: Kraniec Światów"
+                        android:gravity="center"
+                        android:textColor="@color/colorPodswietlenia"
+                        android:textSize="15sp"
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+
+
+                        />
+                    <TextView
+                        android:id="@+id/KraniecSwiatowStan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Stan: Nie wykonany"
+
+                        android:textColor="@color/colorForTheExp"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+                        />
+                    <Button
+                        android:id="@+id/buttonKraniecSwiatow"
+                        android:layout_width="100dp"
+                        android:background="@color/colorPodswietlenia"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+
+                        android:text="Sprawdź"/>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.CardView
+
+                android:layout_width="300dp"
+                android:layout_height="420dp"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="16dp"
+
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="26dp"
+                android:layout_marginRight="26dp"
+                app:cardBackgroundColor="@color/cardview_dark_background"
+                app:cardElevation="18dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="18dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="250dp"
+                        android:layout_height="250dp"
+                        android:src="@drawable/kosiarz"
+                        android:layout_gravity="center_horizontal"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Szalony Nożownik"
+                        android:gravity="center"
+                        android:textColor="@color/colorPodswietlenia"
+                        android:textSize="25sp"
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Lokacja: Świat Dragon Hunter"
+                        android:gravity="center"
+                        android:textColor="@color/colorPodswietlenia"
+                        android:textSize="15sp"
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+
+
+                        />
+                    <TextView
+                        android:id="@+id/LodowiecGeistaStan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Stan: Nie wykonany"
+
+                        android:textColor="@color/colorForTheExp"
+                        android:textSize="15sp"
+                        android:layout_marginBottom="15dp"
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+                        />
+                    <Button
+                        android:id="@+id/buttonLodowiecGeista"
+                        android:layout_width="100dp"
+                        android:background="@color/colorPodswietlenia"
+                        android:layout_height="25dp"
+                        android:layout_gravity="center"
+
+                        android:text="Sprawdź"/>
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+
+</android.support.constraint.ConstraintLayout>

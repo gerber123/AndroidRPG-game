@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pl.marcinos.expfor2.Archer.Menu.ArcherWyborPoziomuActivity">
+    <RelativeLayout
+        android:id="@+id/relativeLayout10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/wyborr"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+
+            android:text="For The Exp"
+            android:textColor="@color/colorForTheExp"
+            android:textSize="45sp"
+            android:textStyle="bold"
+            tools:layout_editor_absoluteX="72dp"
+            tools:layout_editor_absoluteY="16dp" />
+
+        <Button
+            android:id="@+id/button1-5"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="207dp"
+            android:text="Potwory: 1 lvl -5 lvl" />
+
+        <Button
+            android:id="@+id/button5-10"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/button1-5"
+            android:layout_below="@+id/button1-5"
+            android:layout_marginTop="25dp"
+            android:text="Potwory: 5 lvl -10 lvl" />
+
+        <Button
+            android:id="@+id/button10-15"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/button5-10"
+            android:layout_below="@+id/button5-10"
+            android:layout_marginTop="27dp"
+            android:text="Potwory: 10 lvl -15 lvl" />
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

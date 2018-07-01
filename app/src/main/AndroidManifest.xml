@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="pl.marcinos.expfor2">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+
+        android:largeHeap="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".IntroActivity.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".IntroActivity.LoginActivity" />
+        <activity android:name=".IntroActivity.WyborActivity" />
+        <activity android:name=".Mag.Menu.MagMenuActivity" />
+        <activity android:name=".Paladyn.Menu.PaladynMenuActivity" />
+        <activity android:name=".Archer.Menu.ArcherMenuActivity" />
+        <activity android:name=".Paladyn.Menu.PaladynPostacActivity" />
+        <activity android:name=".Mag.Menu.MagPostacActivity" />
+        <activity android:name=".Archer.Menu.ArcherPostacActivity" />
+        <activity android:name=".Mag.Menu.SklepMag" />
+        <activity android:name=".Archer.Menu.SklepArcher" />
+        <activity android:name=".Paladyn.Menu.SklepPaladyn" />
+        <activity android:name=".Paladyn.Menu.WyborPoziomuActivity" />
+        <activity android:name=".Mag.Menu.MagWyborPoziomuActivity" />
+        <activity android:name=".Archer.Menu.ArcherWyborPoziomuActivity" />
+        <activity android:name=".Paladyn.superWalka.WyborPrzeciwnika.WyborJedenActivity" />
+        <activity android:name=".Mag.Walka.Walka.WyborPrzeciwnika.MagWyborJeden" />
+        <activity android:name=".Archer.Walka.WyborPrzeciwnika.ArcherWyborJeden" />
+        <activity android:name=".Paladyn.superWalka.Walka.PaladynKot" />
+        <activity android:name=".Paladyn.superWalka.Walka.PaladynWilkor" />
+        <activity android:name=".Paladyn.superWalka.Walka.PaladynSzkielet" />
+        <activity android:name=".Paladyn.superWalka.Walka.PaladynZombie" />
+        <activity android:name=".Mag.Walka.Walka.Walka.MagKot" />
+        <activity android:name=".Mag.Walka.Walka.Walka.MagWilkor" />
+        <activity android:name=".Mag.Walka.Walka.Walka.MagSzkielet" />
+        <activity android:name=".Mag.Walka.Walka.Walka.MagZombie" />
+        <activity android:name=".Archer.Walka.Walka.ArcherKot" />
+        <activity android:name=".Archer.Walka.Walka.ArcherWilkor" />
+        <activity android:name=".Archer.Walka.Walka.ArcherSzkielet" />
+        <activity android:name=".Archer.Walka.Walka.ArcherZombie" />
+        <activity android:name=".Paladyn.superWalka.WyborPrzeciwnika.WyborDwaActivity" />
+        <activity android:name=".Mag.Walka.Walka.WyborPrzeciwnika.MagWyborDwa" />
+        <activity android:name=".Archer.Walka.WyborPrzeciwnika.ArcherWyborDwa" />
+        <activity android:name=".Archer.Walka.Walka.ArcherMoskit" />
+        <activity android:name=".Archer.Walka.Walka.ArcherOrc" />
+        <activity android:name=".Archer.Walka.Walka.ArcherMnich" />
+        <activity android:name=".Archer.Walka.Walka.ArcherStroz" />
+        <activity android:name=".Mag.Walka.Walka.Walka.MagMnich" />
+        <activity android:name=".Mag.Walka.Walka.Walka.MagOrc" />
+        <activity android:name=".Mag.Walka.Walka.Walka.MagMoskit" />
+        <activity android:name=".Mag.Walka.Walka.Walka.MagStroz" />
+        <activity android:name=".Paladyn.superWalka.Walka.PaladynMoskit" />
+        <activity android:name=".Paladyn.superWalka.Walka.PaladynMnich" />
+        <activity android:name=".Paladyn.superWalka.Walka.PaladynOrc" />
+        <activity android:name=".Paladyn.superWalka.Walka.PaladynStroz" />
+        <activity android:name=".Archer.Walka.WyborPrzeciwnika.ArcherWwyborTrzy" />
+        <activity android:name=".Mag.Walka.Walka.WyborPrzeciwnika.MagWyborTrzy" />
+        <activity android:name=".Paladyn.superWalka.WyborPrzeciwnika.WyborTrzyActivity" />
+        <activity android:name=".Archer.Walka.Walka.ArcherRycerz" />
+        <activity android:name=".Archer.Walka.Walka.ArcherGuard" />
+        <activity android:name=".Archer.Walka.Walka.ArcherHellgate" />
+        <activity android:name=".Mag.Walka.Walka.Walka.MagGuard" />
+        <activity android:name=".Mag.Walka.Walka.Walka.MagHellgate" />
+        <activity android:name=".Mag.Walka.Walka.Walka.MagRycerz" />
+        <activity android:name=".Paladyn.superWalka.Walka.PaladynRycerz" />
+        <activity android:name=".Paladyn.superWalka.Walka.PaladynHellgate" />
+        <activity android:name=".Paladyn.superWalka.Walka.PaladynGuard" />
+        <activity android:name=".Archer.Menu.Zapis" />
+        <activity android:name=".Archer.Menu.MiniGraElf" />
+        <activity android:name=".Mag.Menu.MiniGraMag" />
+        <activity android:name=".Paladyn.Menu.MiniGraPaladyn" />
+        <activity android:name=".Mag.Menu.MagMapaPotworowActivity" />
+        <activity android:name=".Paladyn.Menu.PaladynMapaPotworowActivity" />
+        <activity android:name=".Archer.Menu.ArcherMapaPotworowActivity" />
+        <activity android:name=".Mag.Menu.NewSklepMag" />
+        <activity android:name=".Mag.Menu.MagNewPostacActivity" />
+        <activity android:name=".Mag.Menu.RozdajStaty" />
+        <activity android:name=".Paladyn.Menu.NewSklepPalek" />
+        <activity android:name=".Archer.Menu.ArcherRanking" />
+        <activity android:name=".Archer.Walka.Pvp.ArcherPvpRanking" />
+        <activity android:name=".Archer.Walka.Pvp.ArcherMag" />
+        <activity android:name=".Archer.Walka.Pvp.ArcherArcher" />
+        <activity android:name=".Archer.Walka.Pvp.ArcherPaladyn" />
+        <activity android:name=".Mag.Walka.Walka.Pvp.MagPvpRanking" />
+        <activity android:name=".Mag.Walka.Walka.Pvp.MagArcher" />
+        <activity android:name=".Mag.Walka.Walka.Pvp.MagPaladyn" />
+        <activity android:name=".Mag.Walka.Walka.Pvp.MagMag" />
+        <activity android:name=".Paladyn.superWalka.Pvp.PaladynPvpRanking" />
+        <activity android:name=".Paladyn.superWalka.Pvp.PaladynArcher" />
+        <activity android:name=".Paladyn.superWalka.Pvp.PaladynMag" />
+        <activity android:name=".Paladyn.superWalka.Pvp.PaladynPaladyn" />
+        <activity android:name=".Archer.Menu.ArcherKowal" />
+        <activity android:name=".Paladyn.Menu.PaladynKowal" />
+        <activity android:name=".Mag.Menu.MagKowal" />
+        <activity android:name=".Archer.Walka.Walka.ArcherBoss" />
+        <activity android:name=".Mag.Walka.Walka.Walka.MagBoss" />
+        <activity android:name=".Paladyn.superWalka.Walka.PaladynBoss" />
+        <activity android:name=".Archer.Walka.Walka.ArcherTurtle" />
+        <activity android:name=".Archer.Walka.WyborPrzeciwnika.ArcherWyborCztery" />
+        <activity android:name=".Archer.Walka.Walka.ArcherFishman" />
+        <activity android:name=".Archer.Walka.Walka.ArcherSoldier" />
+        <activity android:name=".Mag.Walka.Walka.WyborPrzeciwnika.MagWyborCzwarty" />
+        <activity android:name=".Paladyn.superWalka.WyborPrzeciwnika.PaladynWyborCzwarty" />
+        <activity android:name=".Mag.Walka.Walka.Walka.MagFishman" />
+        <activity android:name=".Mag.Walka.Walka.Walka.MagSoldier" />
+        <activity android:name=".Mag.Walka.Walka.Walka.MagTurtle" />
+        <activity android:name=".Paladyn.superWalka.Walka.PaladynFishman" />
+        <activity android:name=".Paladyn.superWalka.Walka.PaladynSoldier" />
+        <activity android:name=".Paladyn.superWalka.Walka.PaladynTurtle" />
+        <activity android:name=".IntroActivity.SignUp" />
+        <activity android:name=".IntroActivity.SignUpCharacter" />
+        <activity android:name=".IntroActivity.SignUpReady" />
+        <activity android:name=".Archer.Walka.Questy.ArcherQuesty" />
+        <activity android:name=".Mag.Walka.Walka.Questy.MagQuesty" />
+        <activity android:name=".Paladyn.superWalka.Questy.PaladynQuesty"></activity>
+    </application>
+
+</manifest>

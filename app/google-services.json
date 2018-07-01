@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "732957857312",
+    "firebase_url": "https://expfor2.firebaseio.com",
+    "project_id": "expfor2",
+    "storage_bucket": "expfor2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:732957857312:android:8cce910a402b220a",
+        "android_client_info": {
+          "package_name": "pl.marcinos.expfor2"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "732957857312-5pvprqjmv61p8qecanej3l73tj6e9qjl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "pl.marcinos.expfor2",
+            "certificate_hash": "880f5e8a74c3a3653a76e2fb56e9197a99b40f19"
+          }
+        },
+        {
+          "client_id": "732957857312-rt4pvrn7g1k606pbo5b0vqqc9a825h4t.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-aM7ZxdCuUNOAFilndfssBfHvO30Lq8g"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "732957857312-rt4pvrn7g1k606pbo5b0vqqc9a825h4t.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

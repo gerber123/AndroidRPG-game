@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pl.marcinos.expfor2.Mag.Menu.MagMapaPotworowActivity">
+<HorizontalScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+        android:id="@+id/relativeLayout10"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/mapa"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+    <ImageButton
+        android:id="@+id/button25"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_above="@+id/button5_100"
+
+        android:layout_marginStart="669dp"
+        android:layout_toEndOf="@+id/button1_55"
+        app:srcCompat="@drawable/sss" />
+
+    <ImageButton
+        android:id="@+id/button1_55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignBottom="@+id/button10_155"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="40dp"
+        android:layout_marginStart="142dp"
+        app:srcCompat="@drawable/sss" />
+
+    <ImageButton
+        android:id="@+id/button5_100"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="110dp"
+        android:layout_marginStart="76dp"
+        android:layout_toEndOf="@+id/button1_55"
+        app:srcCompat="@drawable/sss" />
+
+    <ImageButton
+        android:id="@+id/button10_155"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_above="@+id/button5_100"
+        android:layout_marginBottom="185dp"
+        android:layout_marginStart="369dp"
+        android:layout_toEndOf="@+id/button1_55"
+        app:srcCompat="@drawable/sss" />
+
+    <ImageButton
+        android:id="@+id/buttonboss"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_below="@+id/button10_155"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        app:srcCompat="@drawable/sss" />
+
+    <ImageButton
+        android:id="@+id/buttonMagicznKraina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cardview_shadow_end_color"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/buttonboss"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="15dp"
+        app:srcCompat="@drawable/sss" />
+
+    <ImageButton
+        android:id="@+id/buttonQuesty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/cardview_shadow_end_color"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+
+        app:srcCompat="@drawable/questy" />
+
+    </RelativeLayout>
+</HorizontalScrollView>
+</android.support.constraint.ConstraintLayout>
+
+    <!--&gt;<HorizontalScrollView-->
+
+    <!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:background="@drawable/mapa"-->
+    <!--tools:context="pl.marcinos.expfor2.Mag.Menu.MagMapaPotworowActivity"-->
+    <!--&gt;-->
+    <!--<RelativeLayout-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+    <!--<ImageButton-->
+        <!--android:id="@+id/imageButton"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--app:srcCompat="@drawable/sss" />-->
+    <!--</RelativeLayout>-->
+
+
+
+
+<!--</HorizontalScrollView>-->
+<!--</android.support.constraint.ConstraintLayout>-->

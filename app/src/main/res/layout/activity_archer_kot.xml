@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="pl.marcinos.expfor2.Archer.Walka.Walka.ArcherKot">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout12"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/forest"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:src="@drawable/fortheexpgame"
+
+            tools:layout_editor_absoluteX="72dp"
+            tools:layout_editor_absoluteY="16dp" />
+        <ImageView
+            android:id="@+id/imageDskill"
+            android:layout_width="230dp"
+            android:layout_alignParentBottom="true"
+            android:layout_height="320dp"
+            android:visibility="invisible"
+
+            android:layout_marginBottom="50dp"
+            android:layout_above="@+id/buttonWalcz"
+            android:layout_alignParentStart="true"
+            app:srcCompat="@drawable/archerdskill" />
+        <ImageView
+            android:id="@+id/imageDatak"
+            android:layout_width="260dp"
+            android:layout_alignParentBottom="true"
+            android:layout_height="350dp"
+            android:layout_marginBottom="50dp"
+            android:layout_above="@+id/buttonWalcz"
+            android:visibility="invisible"
+
+            android:layout_alignParentStart="true"
+            app:srcCompat="@drawable/archerdatak" />
+        <ImageView
+            android:id="@+id/imageD"
+            android:layout_width="260dp"
+            android:layout_alignParentBottom="true"
+            android:layout_height="350dp"
+            android:layout_above="@+id/buttonWalcz"
+            android:layout_alignParentStart="true"
+            android:visibility="invisible"
+
+            app:srcCompat="@drawable/archerd" />
+        <ImageView
+            android:id="@+id/imageB"
+            android:layout_width="260dp"
+            android:layout_alignParentBottom="true"
+            android:layout_height="350dp"
+            android:layout_marginBottom="50dp"
+            android:layout_above="@+id/buttonWalcz"
+            android:visibility="invisible"
+            android:layout_alignParentStart="true"
+            app:srcCompat="@drawable/archerbwalcz" />
+        <ImageView
+            android:id="@+id/imageA"
+            android:layout_width="260dp"
+            android:layout_alignParentBottom="true"
+            android:layout_height="350dp"
+            android:layout_marginBottom="50dp"
+            android:visibility="invisible"
+            android:layout_above="@+id/buttonWalcz"
+            android:layout_alignParentStart="true"
+            app:srcCompat="@drawable/archerawalcz" />
+        <ImageView
+            android:id="@+id/imageBatak"
+            android:layout_width="260dp"
+            android:layout_alignParentBottom="true"
+            android:layout_height="350dp"
+            android:visibility="invisible"
+            android:layout_marginBottom="50dp"
+            android:layout_above="@+id/buttonWalcz"
+            android:layout_alignParentStart="true"
+            app:srcCompat="@drawable/archerbatak" />
+        <ImageView
+            android:id="@+id/imageBskill"
+            android:layout_width="230dp"
+            android:layout_alignParentBottom="true"
+            android:layout_height="320dp"
+
+           android:visibility="invisible"
+            android:layout_marginBottom="50dp"
+            android:layout_above="@+id/buttonWalcz"
+            android:layout_alignParentStart="true"
+            app:srcCompat="@drawable/imagebskill" />
+        <ImageView
+            android:id="@+id/imageAskill"
+            android:layout_width="230dp"
+            android:layout_alignParentBottom="true"
+            android:layout_height="320dp"
+
+           android:visibility="invisible"
+            android:layout_marginBottom="50dp"
+            android:layout_above="@+id/buttonWalcz"
+            android:layout_alignParentStart="true"
+            app:srcCompat="@drawable/imageaskill" />
+        <ImageView
+            android:id="@+id/imageSskill"
+            android:layout_width="230dp"
+            android:layout_alignParentBottom="true"
+            android:layout_height="320dp"
+
+           android:visibility="invisible"
+            android:layout_marginBottom="50dp"
+            android:layout_above="@+id/buttonWalcz"
+            android:layout_alignParentStart="true"
+            app:srcCompat="@drawable/imagesskill" />
+        <ImageView
+            android:id="@+id/imageAatak"
+            android:layout_width="260dp"
+            android:layout_alignParentBottom="true"
+            android:layout_height="350dp"
+            android:layout_marginBottom="50dp"
+         android:visibility="invisible"
+            android:layout_above="@+id/buttonWalcz"
+            android:layout_alignParentStart="true"
+            app:srcCompat="@drawable/archeraatak" />
+        <ImageView
+            android:id="@+id/imageSatak"
+            android:layout_width="260dp"
+            android:layout_alignParentBottom="true"
+            android:layout_height="350dp"
+            android:layout_marginBottom="50dp"
+            android:visibility="invisible"
+            android:layout_above="@+id/buttonWalcz"
+            android:layout_alignParentStart="true"
+            app:srcCompat="@drawable/archersatak" />
+        <ImageView
+            android:id="@+id/imageS"
+            android:layout_width="260dp"
+            android:visibility="invisible"
+            android:layout_alignParentBottom="true"
+            android:layout_height="350dp"
+            android:layout_above="@+id/buttonWalcz"
+            android:layout_alignParentStart="true"
+            app:srcCompat="@drawable/archerwalcz" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/buttonWalcz"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="22dp"
+            app:srcCompat="@drawable/kot" />
+
+
+
+        <ProgressBar
+            android:id="@+id/progressHpB"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="200dp"
+            android:layout_height="20dp"
+
+
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView10"
+            android:layout_marginTop="53dp" />
+
+        <TextView
+
+            android:id="@+id/textHpB"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+
+            android:layout_alignBottom="@+id/progressHpB"
+            android:layout_alignEnd="@+id/progressHpB"
+            android:text="Hp bohatera: 0"
+            android:textColor="@color/colorForTheExp" />
+
+        <ProgressBar
+            android:id="@+id/progressHpP"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="200dp"
+            android:layout_height="20dp"
+
+
+            android:layout_alignParentEnd="true"
+            android:layout_alignTop="@+id/progressHpB" />
+
+        <TextView
+            android:id="@+id/textHpP"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+
+            android:layout_alignBottom="@+id/progressHpP"
+            android:layout_alignStart="@+id/progressHpP"
+            android:text="Hp Potwora: 0"
+            android:textColor="@color/colorForTheExp" />
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/progressHpB"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/arrow" />
+        <ImageView
+            android:id="@+id/imageSkill"
+            android:layout_width="150dp"
+            android:visibility="invisible"
+            android:layout_height="150dp"
+            android:layout_below="@+id/progressHpB"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"
+
+            app:srcCompat="@drawable/lighting" />
+        <ImageView
+            android:id="@+id/imageViewCrit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/progressHpB"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"
+            android:visibility="invisible"
+            app:srcCompat="@drawable/critical" />
+
+        <ImageButton
+            android:id="@+id/ButtonBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignBottom="@+id/textView10"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="8dp"
+            app:srcCompat="?android:attr/actionModeCloseDrawable" />
+
+        <ImageButton
+            android:id="@+id/buttonWalcz"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="7dp"
+            android:layout_marginLeft="25dp"
+            app:srcCompat="@drawable/atackbutton" />
+
+        <ImageButton
+            android:id="@+id/buttonSkill"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignTop="@+id/buttonWalcz"
+            android:layout_toStartOf="@+id/buttonPotek"
+            app:srcCompat="@drawable/buttonskill" />
+
+        <ImageButton
+            android:id="@+id/buttonPotek"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignEnd="@+id/progressHpB"
+            android:layout_alignTop="@+id/buttonSkill"
+            android:layout_marginStart="9dp"
+
+            app:srcCompat="@drawable/potekbutton" />
+
+        <ImageView
+            android:id="@+id/imageSkillTimer"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="invisible"
+            android:layout_alignTop="@+id/buttonSkill"
+            android:layout_toStartOf="@+id/buttonPotek"
+            app:srcCompat="@android:drawable/presence_away" />
+
+        <ImageView
+            android:id="@+id/imageAtackTimer"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="invisible"
+            android:layout_alignStart="@+id/buttonWalcz"
+            android:layout_alignTop="@+id/buttonWalcz"
+            app:srcCompat="@android:drawable/presence_away" />
+
+        <ImageView
+            android:id="@+id/imagePotTimer"
+            android:layout_width="50dp"
+            android:visibility="invisible"
+            android:layout_height="50dp"
+            android:layout_alignStart="@+id/buttonPotek"
+            android:layout_alignTop="@+id/buttonPotek"
+            app:srcCompat="@android:drawable/presence_busy" />
+
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>

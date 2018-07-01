@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    android:layout_margin="8dp"
+    app:cardElevation="4dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_width="wrap_content"
+    android:layout_marginTop="30dp"
+    android:layout_height="520dp"
+    >
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="520dp"
+        android:orientation="vertical"
+        android:background="@drawable/tlo"
+
+
+
+        >
+
+        <TextView
+            android:id="@+id/textStaty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textExp"
+            android:layout_below="@+id/textExp"
+            android:padding="15dp"
+            android:text="TextView"
+            android:textColor="@color/colorTekstu"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textAddCrit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textAddAtk"
+
+            android:layout_below="@+id/buttonAddAtk"
+            android:layout_marginTop="26dp"
+            android:text="Crit :"
+            android:textColor="@color/colorTekstu"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_marginTop="50dp"
+            android:id="@+id/textStatCrit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textAddCrit"
+            android:layout_alignBottom="@+id/textAddCrit"
+            android:layout_alignStart="@+id/textStatAtk"
+            android:text="0"
+            android:textColor="@color/colorTekstu"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/buttonAddCrit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/buttonAddHP"
+            android:layout_alignTop="@+id/textStatCrit"
+            app:srcCompat="@android:drawable/ic_input_add" />
+
+        <TextView
+            android:id="@+id/textAddZycie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/buttonAddHP"
+            android:layout_alignEnd="@+id/textStaty"
+            android:layout_marginEnd="9dp"
+            android:text="Życie:"
+            android:textColor="@color/colorTekstu"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textAddAtk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignBottom="@+id/buttonAddAtk"
+            android:layout_alignStart="@+id/textAddZycie"
+            android:text="Atak:"
+            android:textColor="@color/colorTekstu"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/buttonAddHP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/textStaty"
+            android:layout_marginEnd="56dp"
+            android:layout_marginTop="46dp"
+            app:srcCompat="@android:drawable/ic_input_add" />
+
+        <ImageButton
+
+            android:id="@+id/buttonAddAtk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/buttonAddHP"
+            android:layout_below="@+id/textStatHp"
+            android:layout_marginTop="16dp"
+            app:srcCompat="@android:drawable/ic_input_add" />
+
+        <TextView
+            android:id="@+id/textStatHp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/textAddZycie"
+            android:layout_alignBottom="@+id/textAddZycie"
+            android:layout_marginStart="30dp"
+            android:layout_toEndOf="@+id/textAddZycie"
+            android:text="0"
+            android:textColor="@color/colorTekstu"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textStatAtk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignStart="@+id/textStatHp"
+            android:layout_alignTop="@+id/textAddAtk"
+            android:textColor="@color/colorTekstu"
+            android:textSize="35sp"
+            android:text="0"
+            android:textStyle="bold"
+            />
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

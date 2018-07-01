@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/tlo"
+    tools:context="pl.marcinos.expfor2.Mag.Menu.MagKowal">
+
+
+
+
+    <HorizontalScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:id="@+id/relativeLayout10"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:weightSum="10"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
+
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/ulepszenie"
+                android:layout_width="300dp"
+                android:layout_height="450dp"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="16dp"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:cardBackgroundColor="@color/cardview_dark_background"
+                app:cardElevation="8dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="8dp"
+                >
+
+                <ImageView
+                    android:id="@+id/success"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/success"
+                    android:foregroundGravity="center_horizontal"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:visibility="invisible"
+                    />
+                <ImageView
+                    android:id="@+id/fail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/fail"
+                    android:layout_marginTop="30dp"
+
+                    android:foregroundGravity="center_horizontal"
+                    android:layout_gravity="center"
+                    android:visibility="invisible"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/bron"
+                        android:layout_width="140dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/rozdzkaulepszenie"
+                        android:layout_gravity="center_horizontal"/>
+                    <TextView
+                        android:id="@+id/textBron"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Różdzka"
+                        android:textAlignment="gravity"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/colorPodswietlenia"
+                        />
+                    <ProgressBar
+                        android:layout_marginTop="20dp"
+                        android:id="@+id/progressHpP"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:layout_width="200dp"
+                        android:layout_height="20dp"
+                        android:padding="5dp"
+
+                        />
+                    <TextView
+                        android:layout_marginTop="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ulepszenie"
+
+                        android:textColor="@color/colorPodswietlenia"
+                        android:textSize="20sp"
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="150 golda"
+
+                        android:textColor="@color/colorForTheExp"
+                        android:textSize="20sp"
+
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+                        />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/buttonUlepsz"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:text="Ulepsz za pieniądze"/>
+                        <Button
+                            android:id="@+id/buttonWymien"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:text="Ulepsz za kamień"/>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/ulepszenieZbroji"
+                android:layout_width="300dp"
+                android:layout_height="450dp"
+                android:layout_columnWeight="1"
+                android:layout_marginBottom="16dp"
+                android:layout_rowWeight="1"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                app:cardBackgroundColor="@color/cardview_dark_background"
+                app:cardElevation="8dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="8dp"
+                >
+
+                <ImageView
+                    android:id="@+id/successzbroja"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/success"
+                    android:foregroundGravity="center_horizontal"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="30dp"
+                    android:visibility="invisible"
+                    />
+                <ImageView
+                    android:id="@+id/failzbroja"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/fail"
+                    android:layout_marginTop="30dp"
+
+                    android:foregroundGravity="center_horizontal"
+                    android:layout_gravity="center"
+                    android:visibility="invisible"
+                    />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_gravity="center_vertical|center_horizontal"
+                    android:layout_margin="16dp"
+                    android:orientation="vertical"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:id="@+id/zbroja"
+                        android:layout_width="140dp"
+                        android:layout_height="150dp"
+                        android:src="@drawable/zbrojaulepszenie"
+                        android:layout_gravity="center_horizontal"/>
+                    <TextView
+                        android:id="@+id/textZbroja"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Zbroja"
+                        android:textAlignment="gravity"
+                        android:layout_gravity="center_horizontal"
+                        android:textColor="@color/colorPodswietlenia"
+                        />
+                    <ProgressBar
+                        android:layout_marginTop="20dp"
+                        android:id="@+id/progressHpZbroja"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:layout_width="200dp"
+                        android:layout_height="20dp"
+                        android:padding="5dp"
+
+                        />
+                    <TextView
+                        android:layout_marginTop="40dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Ulepszenie"
+
+                        android:textColor="@color/colorPodswietlenia"
+                        android:textSize="20sp"
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="150 golda"
+
+                        android:textColor="@color/colorForTheExp"
+                        android:textSize="20sp"
+
+                        android:layout_gravity="center"
+                        android:textAlignment="gravity"
+                        />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <Button
+                            android:id="@+id/buttonUlepszZbroje"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:text="Ulepsz za pieniądze"/>
+                        <Button
+                            android:id="@+id/buttonWymienZbroje"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:text="Ulepsz za kamień"/>
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+            </android.support.v7.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        >
+
+
+        <TextView
+            android:id="@+id/textGoldd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+
+            android:text="Twój gold: "
+
+
+            android:padding="10dp"
+            android:textColor="@color/colorAccent" />
+
+        <TextView
+            android:id="@+id/textItemm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+
+            android:layout_marginTop="10dp"
+            android:text="Twoje Itemy: "
+            android:padding="10dp"
+            android:textColor="@color/colorAccent" />
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
