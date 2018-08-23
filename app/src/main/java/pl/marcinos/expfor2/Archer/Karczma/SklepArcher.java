@@ -1,4 +1,4 @@
-package pl.marcinos.expfor2.Archer.Menu;
+package pl.marcinos.expfor2.Archer.Karczma;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -56,7 +56,7 @@ public class SklepArcher extends AppCompatActivity {
 
         textGold.setText("Twoje złoto: " + archer.hajs);
 
-        textItem.setText("Twoje itemy: " + archer.drop);
+        textItem.setText("Ilość posiadanych kamieni: "+archer.iloscKamieni+", diamentów: "+archer.iloscKamieniPewnych);
 
         zbroja= (ImageView)findViewById(R.id.zbroja);
         Set.zmianaGrafikiSetuSklepArcher(archer,zbroja);
@@ -99,7 +99,7 @@ public class SklepArcher extends AppCompatActivity {
                         Sklep.buyEqInt(archer, archerhp, v, textGold,textMonument);
                         Snackbar.make(v,"Kupiłeś nowe wyposażenie, Atak i Życie rośnie",Snackbar.LENGTH_LONG).setDuration(3000).setActionTextColor(Color.RED).show();
 
-                    } else if (archer.sett == 3&&archer.lvl>=30&&archer.odlamek.equalsIgnoreCase("Antyczny fragment")) {
+                    } else if (archer.sett == 3&&archer.lvl>=30&&archer.getIloscMonumentow()>=1) {
                         Sklep.buyEqInt(archer, archerhp, v, textGold,textMonument);
                         Snackbar.make(v,"Kupiłeś nowe wyposażenie, Atak i Życie rośnie",Snackbar.LENGTH_LONG).setDuration(3000).setActionTextColor(Color.RED).show();
 
@@ -109,7 +109,7 @@ public class SklepArcher extends AppCompatActivity {
                     } else if (archer.lvl < 20 && archer.sett == 2) {
                         Snackbar.make(v, "Potrzebujesz 20 lvl", Snackbar.LENGTH_SHORT).setActionTextColor(Color.RED).show();
                     }
-                    else if(archer.lvl>=30&&archer.sett==3&&archer.odlamek.equalsIgnoreCase("brak"))
+                    else if(archer.lvl>=30&&archer.sett==3&&archer.getIloscMonumentow()==0)
                     {
                         Snackbar.make(v, "Nie spełniasz warunków do posiadania tego EQ", Snackbar.LENGTH_SHORT).setActionTextColor(Color.RED).show();
 //                        Toast.makeText(getApplicationContext(),"chuj",Toast.LENGTH_LONG).show();
