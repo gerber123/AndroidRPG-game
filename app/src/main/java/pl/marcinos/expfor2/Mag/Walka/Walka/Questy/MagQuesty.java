@@ -3,6 +3,7 @@ package pl.marcinos.expfor2.Mag.Walka.Walka.Questy;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -77,9 +78,10 @@ public class MagQuesty extends AppCompatActivity {
         KatakumbyStan=(TextView)findViewById(R.id.KatakumbyStan);
 
         KraniecSwiatowStan=(TextView)findViewById(R.id.KraniecSwiatowStan);
-        Questy.stanQuesta(mag,WzgorzaFaraonaStan,ZatrutaWyspaStan,KatakumbyStan,LodowiecGeistaStan,KraniecSwiatowStan);
+
 
         buttonWzgorzaFaraona = (Button) findViewById(R.id.buttonWzgorzaFaraona);
+
         buttonWzgorzaFaraona.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,11 +121,13 @@ public class MagQuesty extends AppCompatActivity {
                 showSignUpDialog(mag, kot,questKraniec, KraniecSwiatowStan);
             }
         });
+        Questy.stanQuesta(buttonWzgorzaFaraona,buttonZatrutaWyspa,buttonKatakumby,buttonKraniecSwiatow,buttonLodowiecGeista,mag,WzgorzaFaraonaStan,ZatrutaWyspaStan,KatakumbyStan,LodowiecGeistaStan,KraniecSwiatowStan);
+        Questy.sprawdzMisje(buttonWzgorzaFaraona,buttonZatrutaWyspa,buttonKatakumby,buttonKraniecSwiatow,buttonLodowiecGeista,mag);
     }
 
 
     private void showSignUpDialog(final Bohaterowie x, final Potwory y, final Questy quest, final TextView StanQuestaText) {
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(MagQuesty.this,R.style.CustomDialogg);
+        final AlertDialog.Builder alertDialog = new AlertDialog.Builder(MagQuesty.this,R.style.AlertDialogTheme);
 
 
 
@@ -151,6 +155,7 @@ public class MagQuesty extends AppCompatActivity {
                 dialog.dismiss();
             }
         });
+
         if (quest.stanQuesta == 0) {
             alertDialog.setPositiveButton("Zacznij Questa", new DialogInterface.OnClickListener() {
                 @Override
@@ -162,7 +167,9 @@ public class MagQuesty extends AppCompatActivity {
                     }
                     else {
                         quest.zaczetoMisje(x, y, StanQuestaText);
-                        Questy.stanQuesta(mag, WzgorzaFaraonaStan, ZatrutaWyspaStan, KatakumbyStan, LodowiecGeistaStan, KraniecSwiatowStan);
+                        Questy.stanQuesta(buttonWzgorzaFaraona,buttonZatrutaWyspa,buttonKatakumby,buttonKraniecSwiatow,buttonLodowiecGeista,mag,WzgorzaFaraonaStan,ZatrutaWyspaStan,KatakumbyStan,LodowiecGeistaStan,KraniecSwiatowStan);
+                        Questy.sprawdzMisje(buttonWzgorzaFaraona,buttonZatrutaWyspa,buttonKatakumby,buttonKraniecSwiatow,buttonLodowiecGeista,mag);
+
                         Toast.makeText(getApplicationContext(), "Rozpocząłeś Zadanie", Toast.LENGTH_SHORT).show();
                     }
                 }
@@ -176,7 +183,8 @@ public class MagQuesty extends AppCompatActivity {
 
 
                     quest.wykonanoMisje(x, y,pokazQuesta, quest,StanQuestaText);
-                    Questy.stanQuesta(mag,WzgorzaFaraonaStan,ZatrutaWyspaStan,KatakumbyStan,LodowiecGeistaStan,KraniecSwiatowStan);
+                    Questy.stanQuesta(buttonWzgorzaFaraona,buttonZatrutaWyspa,buttonKatakumby,buttonKraniecSwiatow,buttonLodowiecGeista,mag,WzgorzaFaraonaStan,ZatrutaWyspaStan,KatakumbyStan,LodowiecGeistaStan,KraniecSwiatowStan);
+                    Questy.sprawdzMisje(buttonWzgorzaFaraona,buttonZatrutaWyspa,buttonKatakumby,buttonKraniecSwiatow,buttonLodowiecGeista,mag);
 
 
                 }
@@ -185,13 +193,18 @@ public class MagQuesty extends AppCompatActivity {
         }
         else if(quest.stanQuesta==2)
         {
-            Questy.stanQuesta(mag,WzgorzaFaraonaStan,ZatrutaWyspaStan,KatakumbyStan,LodowiecGeistaStan,KraniecSwiatowStan);
+            Questy.stanQuesta(buttonWzgorzaFaraona,buttonZatrutaWyspa,buttonKatakumby,buttonKraniecSwiatow,buttonLodowiecGeista,mag,WzgorzaFaraonaStan,ZatrutaWyspaStan,KatakumbyStan,LodowiecGeistaStan,KraniecSwiatowStan);
+            Questy.sprawdzMisje(buttonWzgorzaFaraona,buttonZatrutaWyspa,buttonKatakumby,buttonKraniecSwiatow,buttonLodowiecGeista,mag);
+
             textQuesta.setText("Ile już zabiłeś " + quest.getIleZabic()+ " / " + quest.getIleZabic());
             textQuesta.setTextColor(Color.GREEN);
         }
 
+        AlertDialog a = alertDialog.create();
+        a.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        a.show();
 
-        alertDialog.show();
+//        alertDialog.show();
 
 
     }

@@ -2,34 +2,26 @@ package pl.marcinos.expfor2.Archer.Walka.Walka;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.CountDownTimer;
 import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Timer;
-import java.util.TimerTask;
 
 import pl.marcinos.expfor2.Archer.Menu.ArcherMenuActivity;
-import pl.marcinos.expfor2.Mag.Menu.MagMenuActivity;
+import pl.marcinos.expfor2.Mag.Menu.SetLevels;
 import pl.marcinos.expfor2.Mag.Walka.Walka.Walka.MagKot;
-import pl.marcinos.expfor2.Mag.Walka.Walka.Walka.MagWilkor;
-import pl.marcinos.expfor2.Metody.AnimacjaPrzeciwnika;
-import pl.marcinos.expfor2.Metody.AnimacjaPrzegranej;
 import pl.marcinos.expfor2.Metody.AtakPotwora;
 import pl.marcinos.expfor2.Metody.ButtonPotkow;
 import pl.marcinos.expfor2.Metody.RegeneracjaPotworow;
-import pl.marcinos.expfor2.Metody.Set;
+import pl.marcinos.expfor2.Metody.Skille;
 import pl.marcinos.expfor2.Metody.Walka;
 import pl.marcinos.expfor2.R;
 
@@ -60,43 +52,43 @@ import static pl.marcinos.expfor2.Potwory.Potwory.zombie;
 import static pl.marcinos.expfor2.Potwory.Potwory.zombiehp;
 
 public class ArcherKot extends AppCompatActivity {
-ImageButton buttonWalcz;
-ImageButton buttonSkill;
-ImageButton buttonPotek;
-ImageView imageTimer;
-ImageView imageStopPotek;
-ImageView imageAtackTimer;
-TextView textHpB;
-TextView textHpP;
-ImageView imageB;
-ImageButton buttonBack;
-ImageView imageBs;
-ImageView imageBa;
-ImageView imageBb;
-ImageView imageP;
-ImageView imageBatakuj;
-ImageView imageBskill;
-ImageView imageAskill;
-ImageView imageSskill;
-ImageView imageBatak;
-ImageView imageAatak;
-ImageView imageSatak;
-ImageView imageKrew;
-ImageView imageBcrit;
+    ImageView buttonWalcz;
+    ImageView buttonSkill;
+    ImageView imageTimer;
+    ImageView imageStopPotek;
+    ImageView imageAtackTimer;
+    TextView textHpB;
+    TextView textHpP;
 
-
+    ImageView imageB;
+    ImageButton buttonBack;
+    ImageView imageBs;
+    ImageView imageBa;
+    ImageView imageBb;
+    ImageView imageP;
+    ImageView imageBatakuj;
+    ImageView imageBskill;
+    ImageView imageAskill;
+    ImageView imageSskill;
+    ImageView imageBatak;
+    ImageView imageAatak;
+    ImageView imageSatak;
+    ImageView imageKrew;
+    ImageView imageBcrit;
     ImageView imageDskill;
     ImageView imageDatak;
     ImageView imageBD;
-ImageView imageSkillIkon;
+    ImageView imageSkillIkon;
+    ImageView hpPotion;
+    ImageView manaPotion;
+    ImageView imageSkillOgien;
 
 
-    private Handler handler = new Handler();
-    private Timer timer = new Timer();
-
-ImageView anim;
-ProgressBar progresHpB;
-ProgressBar progresHpP;
+    ImageView anim;
+    ProgressBar progresHpB;
+    ProgressBar progresHpP;
+    TextView textMana;
+    ProgressBar progresMana;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -104,25 +96,17 @@ ProgressBar progresHpP;
         imageBcrit = (ImageView)findViewById(R.id.imageViewCrit);
 
         imageB=(ImageView)findViewById(R.id.imageB);
-
-     imageBb= (ImageView)findViewById(R.id.imageB);
-      imageBa= (ImageView)findViewById(R.id.imageA);
         imageBskill= (ImageView)findViewById(R.id.imageBskill);
-     imageBs= (ImageView)findViewById(R.id.imageS);
-      imageBatak= (ImageView)findViewById(R.id.imageBatak);
-      imageAatak= (ImageView)findViewById(R.id.imageAatak);
-      imageSatak= (ImageView)findViewById(R.id.imageSatak);
-        imageTimer= (ImageView)findViewById(R.id.imageSkillTimer);
-      imageStopPotek= (ImageView)findViewById(R.id.imagePotTimer);
-        imageAtackTimer= (ImageView)findViewById(R.id.imageAtackTimer);
-        imageSkillIkon= (ImageView)findViewById(R.id.imageSkill);
+
         buttonBack=(ImageButton) findViewById(R.id.ButtonBack);
 
-
-        imageBD= (ImageView)findViewById(R.id.imageD);
-        imageDskill= (ImageView)findViewById(R.id.imageDskill);
-        imageDatak= (ImageView)findViewById(R.id.imageDatak);
-        Set.zmianaSetuWalkaIntSetD(archer,imageBb,imageBa,imageBs,imageBD);
+        imageBatakuj=(ImageView)findViewById(R.id.imageBatak);
+        imageBskill=(ImageView)findViewById(R.id.imageBskill);
+        imageB= (ImageView)findViewById(R.id.imageB);
+        SetLevels.ArcherSetCheck(archer,imageB,imageBatakuj,imageBskill);
+        buttonSkill=(ImageView)findViewById(R.id.buttonSkill);
+        buttonWalcz=(ImageView)findViewById(R.id.buttonWalcz);
+        Skille.archerDifferenceTest(buttonSkill,buttonWalcz);
 
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -132,37 +116,22 @@ ProgressBar progresHpP;
                 ArcherKot.this.finish();
             }
         });
-        if(archer.sett==1)
-        {
-            imageBatakuj=(ImageView)findViewById(R.id.imageBatak);
-            imageBskill=(ImageView)findViewById(R.id.imageBskill);
-            imageB= (ImageView)findViewById(R.id.imageB);
-
-        }
-        else if(archer.sett==2)
-        {
-            imageBatakuj=(ImageView)findViewById(R.id.imageAatak);
-            imageB= (ImageView)findViewById(R.id.imageA);
-            imageBskill=(ImageView)findViewById(R.id.imageAskill);
-        }
-        else if(archer.sett==3)
-        {
-            imageBatakuj=(ImageView)findViewById(R.id.imageSatak);
-            imageB= (ImageView)findViewById(R.id.imageS);
-            imageBskill=(ImageView)findViewById(R.id.imageSskill);
-        }
-        else if(archer.sett==4)
-        {
-            imageBatakuj=(ImageView)findViewById(R.id.imageDatak);
-            imageB= (ImageView)findViewById(R.id.imageD);
-            imageBskill=(ImageView)findViewById(R.id.imageDskill);
-        }
-
-
+        imageBatakuj=(ImageView)findViewById(R.id.imageBatak);
+        imageBskill=(ImageView)findViewById(R.id.imageBskill);
+        imageB= (ImageView)findViewById(R.id.imageB);
+        imageB.setVisibility(View.VISIBLE);
+        SetLevels.ArcherSetCheck(archer,imageB,imageBatakuj,imageBskill);
+        buttonSkill=(ImageView)findViewById(R.id.buttonSkill);
+        Skille.archerDifferenceTest(buttonSkill,buttonWalcz);
 
         textHpB=(TextView)findViewById(R.id.textHpB);
         textHpP=(TextView)findViewById(R.id.textHpP);
-
+        textMana=(TextView)findViewById(R.id.manaText);
+        progresMana=(ProgressBar)findViewById(R.id.ManaBar);
+        imageSkillIkon= (ImageView)findViewById(R.id.imageSkill);
+        progresMana.setMax(archer.maxMana);
+        progresMana.setProgress(archer.mana);
+        textMana.setText("Chęć mordu: "+archer.mana);
         imageP= (ImageView)findViewById(R.id.imageView4);
         anim = (ImageView)findViewById(R.id.imageView5);
         progresHpB=(ProgressBar)findViewById(R.id.progressHpB);
@@ -172,43 +141,55 @@ ProgressBar progresHpP;
         progresHpB.setProgress(archer.hpbohater);
         progresHpP.setProgress(kot.hp);
         View v =this.findViewById(android.R.id.content).getRootView();
-        AtakPotwora.AtakPotwora(imageB,imageBatakuj,imageP,archer,kot,kothp,textHpB,textHpP,progresHpB,progresHpP,buttonWalcz,buttonSkill,buttonPotek);
+        hpPotion= (ImageView)findViewById(R.id.hpPotion);
+        manaPotion=(ImageView)findViewById(R.id.manaPotion);
+        hpPotion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                archer.hpbohater+=300;
+                progresHpB.setProgress(archer.hpbohater);
+                textHpB.setText("Hp: "+archer.hpbohater+" ");
+                hpPotion.setVisibility(View.INVISIBLE);
+                hpPotion.setEnabled(false);
+            }
+        });
+        manaPotion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-
+            }
+        });
+        AtakPotwora.AtakPotworaPotkiTest(hpPotion,manaPotion,imageB,imageBatakuj,imageP,archer,kot,kothp,textHpB,textHpP,progresHpB,progresHpP,buttonWalcz,buttonSkill);
 
         textHpB.setText("Hp bohatera: "+archer.hpbohater);
         textHpP.setText("Hp Potwora: "+kot.hp);
-        buttonWalcz=(ImageButton)findViewById(R.id.buttonWalcz);
         buttonWalcz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Walka.walczzPotworem(imageAtackTimer,imageBcrit,anim,imageBatakuj,imageB,imageP,archer,archerhp,kot,kothp,textHpB,textHpP,v,buttonWalcz);
-
-
+                Walka.walczzPotworemTest(imageBcrit,anim,imageBatakuj,imageB,imageP,archer,archerhp,kot,kothp,textHpB,textHpP,v,buttonWalcz);
+                progresMana.setProgress(archer.mana);
+                textMana.setText("Chęć mordu: "+archer.mana);
                 progresHpB.setProgress(archer.hpbohater);
                 progresHpP.setProgress(kot.hp);
                 if(archer.hpbohater<=0)
                 {
-
                     Snackbar.make(v,"Zginąłeś, wróć do menu",Snackbar.LENGTH_SHORT);
                 }
                 if(kot.hp<=0)
                 {
                     nextFight(v);
-
-
                 }
             }
         });
-            buttonSkill=(ImageButton)findViewById(R.id.buttonSkill);
+
             buttonSkill.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-                    Walka.walnijzeskilla(imageTimer,imageBcrit,imageSkillIkon,imageBskill,imageB,imageP,archer,archerhp,kot,kothp,textHpB,textHpP,v,buttonSkill);
-
-
+                    Walka.walnijzeskillaTest(imageBcrit,imageSkillIkon,imageBskill,imageB,imageP,archer,archerhp,kot,kothp,textHpB,textHpP,v,buttonSkill);
+                    progresMana.setProgress(archer.mana);
+                    textMana.setText("Chęć mordu: "+archer.mana);
                     progresHpB.setProgress(archer.hpbohater);
                     progresHpP.setProgress(kot.hp);
                     if(archer.hpbohater<=0)
@@ -226,21 +207,7 @@ ProgressBar progresHpP;
                     }
                 }
             });
-            buttonPotek=(ImageButton)findViewById(R.id.buttonPotek);
 
-            buttonPotek.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-
-
-//                   textHpB.setText(archer.hpbohater);
-
-
-                    ButtonPotkow.uzyjPota(archer,archerhp,imageStopPotek,buttonPotek,textHpB,progresHpB);
-
-                }
-            });
 
     }
         @Override

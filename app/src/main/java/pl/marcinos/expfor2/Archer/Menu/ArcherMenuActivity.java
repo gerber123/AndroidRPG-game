@@ -1,49 +1,23 @@
 package pl.marcinos.expfor2.Archer.Menu;
 
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Color;
-import android.os.CountDownTimer;
-import android.preference.PreferenceManager;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import pl.marcinos.expfor2.Archer.Walka.Pvp.ArcherArcher;
 import pl.marcinos.expfor2.Archer.Walka.Pvp.ArcherPvpRanking;
 import pl.marcinos.expfor2.Bohaterowie.Archer;
 
-import pl.marcinos.expfor2.Bohaterowie.Mag;
-import pl.marcinos.expfor2.IntroActivity.eeee;
-import pl.marcinos.expfor2.Mag.Menu.MagMapaPotworowActivity;
-import pl.marcinos.expfor2.Mag.Menu.MagMenuActivity;
-import pl.marcinos.expfor2.Mag.Menu.MagNewPostacActivity;
-import pl.marcinos.expfor2.Mag.Menu.MiniGraMag;
-import pl.marcinos.expfor2.Mag.Menu.NewSklepMag;
-import pl.marcinos.expfor2.Metody.Dialog;
-import pl.marcinos.expfor2.Metody.Set;
-import pl.marcinos.expfor2.Metody.SoundPlayer;
-import pl.marcinos.expfor2.Metody.onDestroyOffline;
-import pl.marcinos.expfor2.Model.User;
-import pl.marcinos.expfor2.Paladyn.Menu.PaladynMenuActivity;
-import pl.marcinos.expfor2.Paladyn.Menu.SklepPaladyn;
+import pl.marcinos.expfor2.Bohaterowie.Itemy;
 import pl.marcinos.expfor2.R;
-
-import static pl.marcinos.expfor2.IntroActivity.LoginActivity.user123;
 
 public class ArcherMenuActivity extends AppCompatActivity {
 
@@ -63,6 +37,16 @@ public class ArcherMenuActivity extends AppCompatActivity {
 
     public static Archer archer = new Archer();
     public static Archer archerhp = new Archer();
+    public static Itemy kamien = new Itemy("Kamien","1500",archer.getIloscKamieni(),R.drawable.kamien,"Magiczny Kamień który umożliwa ulepszanie wyposażenia");
+    public static Itemy kamienPewny = new Itemy("Diament","2300",archer.getIloscKamieniPewnych(),R.drawable.magicznykamien,"Antyczny kamień który umożliwia ulepszenie wyposażenia");
+    public static Itemy antycznyFragment = new Itemy("Monument","1500",archer.getIloscMonumentow(),R.drawable.artefakt,"Artefakt umożliwiający uzyskać najlepsza zbroję");
+    public static Itemy klucz = new Itemy("Klucz","1500",archer.getIloscKluczy(),R.drawable.key,"Klucz pozwalający wejśc do jamy Antharasa");
+    public static Itemy zloto = new Itemy("Gold"," ",archer.getHajs(),R.drawable.redball," ");
+    public static Itemy set = new Itemy("Set"," ",archer.getSett(),R.drawable.redball,"Zbroja pozwalająca Ci przetrwać na polu bitwy");
+    public static Itemy bron = new Itemy("Wep"," ",archer.getSett(),R.drawable.redball,"Wyposażenie pozwalające Ci pokonywać potwory");
+    public static Itemy kolczykLajamira = new Itemy("Kolczyk Lajamira"," ",archer.getKolczykiLajamira(),R.drawable.necklace,"Kolczyki Lajamira, dodają Twoim Umięjtnośćia o 200 mocy przy użyciu umięjtnośći oraz zwiększają Twoją szanse krytyczna ");
+    public static Itemy pierscienVolda = new Itemy("Pierścień Volda"," ",archer.getPierscienVolda(),R.drawable.voldring,"Pierścień Volda, Vold Ofiaruję Ci Pierścień który powoduje że Twoje ciosy są precyzyjniesze a siła krytyczna zwiększa się o 200, oraz atak o 250");
+    public static Itemy naszyjnikTorosa = new Itemy("Naszyjnik Torosa"," ",archer.getNaszyjnikTorosa(),R.drawable.voldearring,"Naszyjnik Torosa, który ofiaruje Ci za bycie honorowym walecznym przeciwnikiem. Dodaje Ci 300 Pancerza i 300 punktów Życia");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,6 +55,18 @@ public class ArcherMenuActivity extends AppCompatActivity {
 
         postac = (CardView) findViewById(R.id.postac);
 
+        if(archer.getProfesja().equalsIgnoreCase("bow"))
+        {
+            archer.skillDamage=780;
+        }
+        if(archer.getProfesja().equalsIgnoreCase("dagger"))
+        {
+            archer.skillDamage=480;
+        }
+        if(archer.getProfesja().equalsIgnoreCase("brak"))
+        {
+            archer.skillDamage=50;
+        }
 //        database = FirebaseDatabase.getInstance();
 //        users = database.getReference("Users");
 //        users.addValueEventListener(new ValueEventListener() {
@@ -133,12 +129,12 @@ public class ArcherMenuActivity extends AppCompatActivity {
             }
         });
 
-        sklep = (CardView) findViewById(R.id.sklep);
+        sklep = (CardView) findViewById(R.id.karczma);
         sklep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                    Intent intent = new Intent(ArcherMenuActivity.this, SklepArcher.class);
+                    Intent intent = new Intent(ArcherMenuActivity.this, ArcherKarczma.class);
                     startActivity(intent);
 
 

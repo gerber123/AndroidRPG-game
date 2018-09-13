@@ -64,17 +64,21 @@ public class Archer extends Bohaterowie
 
     public Archer()
     {
-
+        this.iloscKamieni=0;
+        this.iloscKamieniPewnych=0;
+        this.iloscKluczy=0;
+        this.iloscMonumentow=0;
         this.hpbohater=2420;
         this.atkbohater=400;
         this.maxhp=2420;
         this.maxexp=30;
-
+        this.profesja="brak";
         this.exp=0;
         this.hajs=150;
         this.lvl=1;
         this.drop="brak";
-
+        this.mana=0;
+        this.maxMana=8;
         this.quest1=0;
         this.quest2=0;
         this.quest3=0;
@@ -82,7 +86,9 @@ public class Archer extends Bohaterowie
         this.quest5=0;
         this.quest6=0;
         this.iloscZabitychPotworów=0;
-
+        this.kolczykiLajamira=0;
+        this.naszyjnikTorosa=0;
+        this.pierscienVolda=0;
         this.staty=5;
         this.statyatk=0;
         this.statyhp=0;

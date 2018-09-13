@@ -25,6 +25,8 @@ public class SklepMag extends AppCompatActivity {
     Button buttonWymien;
     TextView textGold;
     TextView textItem;
+    TextView textMonument;
+    TextView textKlucz;
     TextView textLvl;
     Bohaterowie x;
 
@@ -34,11 +36,16 @@ public class SklepMag extends AppCompatActivity {
         setContentView(R.layout.activity_sklep_mag);
         buttonBandaz = (Button) findViewById(R.id.buttonBandaz);
         textLvl=(TextView)findViewById(R.id.LVL);
+        textMonument=(TextView)findViewById(R.id.textMonument);
+        textKlucz=(TextView)findViewById(R.id.textKlucz);
 
         textGold = (TextView) findViewById(R.id.textGold);
         textItem = (TextView) findViewById(R.id.textItem);
+        textMonument.setText("Monument: "+mag.getIloscMonumentow());
+        textMonument.setText("Klucze: "+mag.getIloscKluczy());
         textGold.setText("Twoje złoto: " + mag.hajs);
-        textItem.setText("Twoje itemy: " + mag.drop);
+        textItem.setText("Ilość posiadanych kamieni: "+mag.iloscKamieni+", diamentów: "+mag.iloscKamieniPewnych);
+
         buttonEq = (Button) findViewById(R.id.buttonEq);
         buttonBandaz.setOnClickListener(new View.OnClickListener() {
             @Override

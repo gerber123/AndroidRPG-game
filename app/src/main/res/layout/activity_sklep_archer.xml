@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/tlo"
-    tools:context="pl.marcinos.expfor2.Archer.Menu.SklepArcher">
+    tools:context="pl.marcinos.expfor2.Archer.Karczma.SklepArcher">
 
         <HorizontalScrollView
             android:layout_width="match_parent"

@@ -83,13 +83,16 @@ public class MagNewPostacActivity extends AppCompatActivity {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 User login =dataSnapshot.child(user123.getUserName()).getValue(User.class);
-
+                login.setProfesja(mag.profesja);
                 login.setHpbohater(mag.hpbohater);
                 login.setAtkbohater(mag.atkbohater);
                 login.setAtakcritical(mag.atakcritical);
                 login.setDrop(mag.drop);
                 login.setPoziomUlepszenia(mag.poziomUlepszenia);
                 login.setExp(mag.exp);
+                login.setPierscienVolda(mag.pierscienVolda);
+                login.setNaszyjnikTorosa(mag.naszyjnikTorosa);
+                login.setKolczykiLajamira(mag.kolczykiLajamira);
                 login.setLvl(mag.lvl);
                 login.setHajs(mag.hajs);
                 login.setOdlegloscKrytyczna(mag.odlegloscKrytyczna);
@@ -102,10 +105,17 @@ public class MagNewPostacActivity extends AppCompatActivity {
                 login.setQuest3(mag.quest3);
                 login.setQuest4(mag.quest4);
                 login.setQuest5(mag.quest5);
+                login.setMaxMana(mag.maxMana);
+                login.setMana(mag.mana);
                 login.setIloscZabitychPotworów(mag.iloscZabitychPotworów);
 ////                login.setNazwa(mag.nazwa);ob
 //
 //
+                login.setIloscKamieni(mag.getIloscKamieni());
+                login.setIloscKamieniPewnych(mag.getIloscKamieniPewnych());
+                login.setIloscMonumentow(mag.getIloscMonumentow());
+                login.setIloscKluczy(mag.getIloscKluczy());
+
                 login.setSet(mag.set);
                 login.setPoziomUlepszeniaZbroji(mag.poziomUlepszeniaZbroji);
 //
@@ -146,7 +156,7 @@ public class MagNewPostacActivity extends AppCompatActivity {
         buttonAddAtk = (ImageButton)findViewById(R.id.buttonAddAtk);
         buttonAddCrit = (ImageButton)findViewById(R.id.buttonAddCrit);
 
-        textKlasa.setText("Twoja klasa : Mag");
+        textKlasa.setText("Twoja Profesja: "+mag.getProfesja());
         texthp.setText("Twoje życie : "+ mag.hpbohater+"/"+ maghp.hpbohater);
         textAtk.setText("Twój atk : "+ mag.atkbohater);
         textLvl.setText("Twój lvl : "+ mag.lvl);

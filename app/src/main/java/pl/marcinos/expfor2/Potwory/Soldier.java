@@ -46,8 +46,8 @@ public class Soldier extends Potwory {
     }
 
     @Override
-    public String getAtk() {
-        return super.getAtk();
+    public String getAtkDoListy() {
+        return super.getAtkDoListy();
     }
 
     @Override

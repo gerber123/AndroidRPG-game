@@ -6,6 +6,7 @@ import android.support.annotation.DrawableRes;
 import android.support.v7.app.AlertDialog;
 import android.view.View;
 
+import pl.marcinos.expfor2.Bohaterowie.Bohaterowie;
 import pl.marcinos.expfor2.IntroActivity.MainActivity;
 import pl.marcinos.expfor2.Paladyn.Menu.PaladynMenuActivity;
 import pl.marcinos.expfor2.Questy.Questy;
@@ -13,6 +14,7 @@ import pl.marcinos.expfor2.R;
 
 import static android.support.v4.app.ActivityCompat.finishAffinity;
 import static android.support.v4.app.ActivityCompat.startActivityForResult;
+import static pl.marcinos.expfor2.Mag.Menu.MagMenuActivity.mag;
 
 /**
  * Created by marci on 10.03.2018.
@@ -20,7 +22,7 @@ import static android.support.v4.app.ActivityCompat.startActivityForResult;
 
 public class Dialog {
     View v;
-
+    public static int score=0;
     public static void przegrana(View v) {
 
         AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(v.getContext());
@@ -87,6 +89,35 @@ public class Dialog {
 
         alertDialog.show();
     }
+
+
+    public static void kamienLubDiamnet(Bohaterowie x,View v)
+    {
+        if(x.getIloscKamieni()>=1&&x.getIloscKamieniPewnych()>=1) {
+            final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(v.getContext());
+            alertDialogBuilder.setTitle("Dylemat");
+            alertDialogBuilder.setMessage("Posiadasz Kamień i Diament, który z materiałów chcesz użyć do ulepszenia? ");
+
+            alertDialogBuilder.setPositiveButton(("Kamień"), new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    score=1;
+                }
+            });
+            alertDialogBuilder.setNegativeButton(("Diament"), new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    score=2;
+                }
+            });
+            alertDialogBuilder.setCancelable(false);
+            alertDialogBuilder.setIcon(R.drawable.ikonaograb);
+            AlertDialog alertDialog = alertDialogBuilder.create();
+
+            alertDialog.show();
+        }
+    }
+
     public static void zapisz(View v) {
         final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(v.getContext());
         alertDialogBuilder.setTitle("Zapis? ");

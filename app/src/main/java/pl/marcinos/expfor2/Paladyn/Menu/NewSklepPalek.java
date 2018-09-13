@@ -99,7 +99,7 @@ public class NewSklepPalek extends AppCompatActivity {
                         Sklep.buyEqInt(paladyn, paladynhp, v, textGold,textMonument);
                         Snackbar.make(v,"Kupiłeś nowe wyposażenie, Atak i Życie rośnie",Snackbar.LENGTH_LONG).setDuration(3000).setActionTextColor(Color.RED).show();
 
-                    } else if (paladyn.sett == 3&&paladyn.lvl>=30&&paladyn.odlamek.equalsIgnoreCase("Antyczny fragment")) {
+                    } else if (paladyn.sett == 3&&paladyn.lvl>=30&&paladyn.getIloscMonumentow()>=1) {
                         Sklep.buyEqInt(paladyn, paladynhp, v, textGold,textMonument);
                         Snackbar.make(v,"Kupiłeś nowe wyposażenie, Atak i Życie rośnie",Snackbar.LENGTH_LONG).setDuration(3000).setActionTextColor(Color.RED).show();
 

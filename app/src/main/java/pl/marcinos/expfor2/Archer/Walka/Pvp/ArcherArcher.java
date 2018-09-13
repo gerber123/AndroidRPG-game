@@ -90,6 +90,7 @@ public class ArcherArcher extends AppCompatActivity {
     DatabaseReference users;
     DatabaseReference uzytkownicy;
     FirebaseDatabase database;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

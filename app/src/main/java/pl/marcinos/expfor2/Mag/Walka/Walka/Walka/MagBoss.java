@@ -25,16 +25,21 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import pl.marcinos.expfor2.Archer.Menu.ArcherMenuActivity;
+import pl.marcinos.expfor2.Mag.Menu.SetLevels;
 import pl.marcinos.expfor2.Metody.AtakPotwora;
 import pl.marcinos.expfor2.Metody.ButtonPotkow;
 import pl.marcinos.expfor2.Metody.Drop;
 import pl.marcinos.expfor2.Metody.RegeneracjaPotworow;
 import pl.marcinos.expfor2.Metody.Set;
+import pl.marcinos.expfor2.Metody.Skille;
 import pl.marcinos.expfor2.Metody.Walka;
 import pl.marcinos.expfor2.R;
 
+import static android.view.View.VISIBLE;
 import static pl.marcinos.expfor2.Archer.Menu.ArcherMenuActivity.archer;
 import static pl.marcinos.expfor2.Archer.Menu.ArcherMenuActivity.archerhp;
+import static pl.marcinos.expfor2.Mag.Menu.MagMenuActivity.uzytyPotekHp;
+import static pl.marcinos.expfor2.Mag.Menu.MagMenuActivity.uzytyPotekMp;
 import static pl.marcinos.expfor2.Potwory.Potwory.boss;
 import static pl.marcinos.expfor2.Potwory.Potwory.bosshp;
 import static pl.marcinos.expfor2.Potwory.Potwory.guard;
@@ -103,6 +108,10 @@ public class MagBoss extends AppCompatActivity {
     ImageView anim;
     ProgressBar progresHpB;
     ProgressBar progresHpP;
+    TextView textMana;
+    ProgressBar progresMana;
+    ImageView hpPotion;
+    ImageView manaPotion;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -134,43 +143,23 @@ public class MagBoss extends AppCompatActivity {
                 MagBoss.this.finish();
             }
         });
-        if(mag.sett==1)
-        {
-            imageBatakuj=(ImageView)findViewById(R.id.imageBatak);
-            imageBskill=(ImageView)findViewById(R.id.imageBskill);
-            imageB= (ImageView)findViewById(R.id.imageB);
-
-        }
-        else if(mag.sett==2)
-        {
-            imageBatakuj=(ImageView)findViewById(R.id.imageAatak);
-            imageB= (ImageView)findViewById(R.id.imageA);
-            imageBskill=(ImageView)findViewById(R.id.imageAskill);
-        }
-        else if(mag.sett==3)
-        {
-            imageBatakuj=(ImageView)findViewById(R.id.imageSatak);
-            imageB= (ImageView)findViewById(R.id.imageS);
-            imageBskill=(ImageView)findViewById(R.id.imageSskill);
-        }
-        else if(mag.sett==4)
-        {
-            imageBatakuj=(ImageView)findViewById(R.id.imageDatak);
-            imageB= (ImageView)findViewById(R.id.imageD);
-            imageBskill=(ImageView)findViewById(R.id.imageDskill);
-        }
-
-        imageBD= (ImageView)findViewById(R.id.imageD);
-        imageDskill= (ImageView)findViewById(R.id.imageDskill);
-        imageDatak= (ImageView)findViewById(R.id.imageDatak);
-        Set.zmianaSetuWalkaIntSetD(mag,imageBb,imageBa,imageBs,imageBD);
-
-
+        imageBatakuj=(ImageView)findViewById(R.id.imageBatak);
+        imageBskill=(ImageView)findViewById(R.id.imageBskill);
+        imageB= (ImageView)findViewById(R.id.imageB);
+        SetLevels.SetCheck(mag,imageB,imageBatakuj,imageBskill);
+        buttonSkill=(ImageButton)findViewById(R.id.buttonSkill);
+        Skille.magDifference(buttonSkill,imageTimer);
+        imageB.setVisibility(VISIBLE);
         textHpB=(TextView)findViewById(R.id.textHpB);
         textHpP=(TextView)findViewById(R.id.textHpP);
 
         imageP= (ImageView)findViewById(R.id.imageView4);
         anim = (ImageView)findViewById(R.id.imageView5);
+        textMana=(TextView)findViewById(R.id.manaText);
+        progresMana=(ProgressBar)findViewById(R.id.ManaBar);
+        progresMana.setMax(mag.maxMana);
+        progresMana.setProgress(mag.mana);
+        textMana.setText("Mana: "+mag.mana);
         progresHpB=(ProgressBar)findViewById(R.id.progressHpB);
         progresHpP=(ProgressBar)findViewById(R.id.progressHpP);
         progresHpB.setMax(maghp.hpbohater);
@@ -178,7 +167,29 @@ public class MagBoss extends AppCompatActivity {
         progresHpB.setProgress(mag.hpbohater);
         progresHpP.setProgress(boss.hp);
         View v =this.findViewById(android.R.id.content).getRootView();
-        AtakPotwora.AtakPotwora(imageB,imageBatakuj,imageP,mag,boss,bosshp,textHpB,textHpP,progresHpB,progresHpP,buttonWalcz,buttonSkill,buttonPotek);
+        hpPotion= (ImageView)findViewById(R.id.hpPotion);
+        manaPotion=(ImageView)findViewById(R.id.manaPotion);
+        hpPotion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mag.hpbohater+=300;
+                progresHpB.setProgress(mag.hpbohater);
+                textHpB.setText("Hp: "+mag.hpbohater+" ");
+                hpPotion.setVisibility(View.INVISIBLE);
+                hpPotion.setEnabled(false);
+            }
+        });
+        manaPotion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mag.mana+=300;
+                progresMana.setProgress(mag.mana);
+                textMana.setText("Mana: "+mag.mana+" ");
+                manaPotion.setVisibility(View.INVISIBLE);
+                manaPotion.setEnabled(false);
+            }
+        });
+        AtakPotwora.AtakPotworaPotki(hpPotion,manaPotion,imageB,imageBatakuj,imageP,mag,boss,bosshp,textHpB,textHpP,progresHpB,progresHpP,buttonWalcz,buttonSkill,buttonPotek);
 
 
 
@@ -205,12 +216,14 @@ public class MagBoss extends AppCompatActivity {
                 }
             }
         });
-        buttonSkill=(ImageButton)findViewById(R.id.buttonSkill);
+
         buttonSkill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 Walka.walnijzeskilla(imageTimer,imageBcrit,imageSkillIkon,imageBskill,imageB,imageP,mag,maghp,boss,bosshp,textHpB,textHpP,v,buttonSkill);
+                progresMana.setProgress(mag.mana);
+                textMana.setText("Mana: "+mag.mana+" ");
 
 
                 progresHpB.setProgress(mag.hpbohater);
@@ -265,6 +278,8 @@ public class MagBoss extends AppCompatActivity {
                 MagBoss.this.finish();
                 RegeneracjaPotworow.Regenereuj(guard,guardhp,hellgate,hellgatehp,kot,kothp,mnich,mnichhp,moskit,moskithp,orc,orchp,rycerz,rycerzhp,stroz,strozhp,szkielet,szkielethp,wilkor,wilkorhp,zombie,zombiehp);
 
+                uzytyPotekHp=0;
+                uzytyPotekMp=0;
 
 
 

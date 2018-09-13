@@ -6,10 +6,9 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-
-        android:largeHeap="true"
         android:theme="@style/AppTheme">
         <activity android:name=".IntroActivity.MainActivity">
             <intent-filter>
@@ -27,7 +26,7 @@
         <activity android:name=".Mag.Menu.MagPostacActivity" />
         <activity android:name=".Archer.Menu.ArcherPostacActivity" />
         <activity android:name=".Mag.Menu.SklepMag" />
-        <activity android:name=".Archer.Menu.SklepArcher" />
+        <activity android:name=".Archer.Karczma.SklepArcher" />
         <activity android:name=".Paladyn.Menu.SklepPaladyn" />
         <activity android:name=".Paladyn.Menu.WyborPoziomuActivity" />
         <activity android:name=".Mag.Menu.MagWyborPoziomuActivity" />
@@ -121,7 +120,21 @@
         <activity android:name=".IntroActivity.SignUpReady" />
         <activity android:name=".Archer.Walka.Questy.ArcherQuesty" />
         <activity android:name=".Mag.Walka.Walka.Questy.MagQuesty" />
-        <activity android:name=".Paladyn.superWalka.Questy.PaladynQuesty"></activity>
+        <activity android:name=".Paladyn.superWalka.Questy.PaladynQuesty" />
+        <activity android:name=".Mag.Karczma.MagSkills" />
+        <activity android:name=".Mag.Menu.MagKarczma" />
+        <activity android:name=".Mag.Karczma.MagEq" />
+        <activity android:name=".Archer.Karczma.ArcherSkills" />
+        <activity android:name=".Archer.Menu.ArcherKarczma" />
+        <activity android:name=".Archer.Karczma.ArcherEq" />
+        <activity android:name=".Paladyn.Karczma.PaladynSkills" />
+        <activity android:name=".Paladyn.Menu.PaladynKarczma" />
+        <activity android:name=".Paladyn.Karczma.PaladynEq" />
+        <activity android:name=".Mag.Walka.Walka.Walka.MagKot" />
+        <activity android:name=".Mag.Karczma.MagHonor" />
+
+        <activity android:name=".Paladyn.Karczma.PaladynHonor" />
+        <activity android:name=".Archer.Karczma.ArcherHonor"></activity>
     </application>
 
 </manifest>

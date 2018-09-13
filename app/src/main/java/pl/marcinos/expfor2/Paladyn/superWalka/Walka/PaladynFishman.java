@@ -16,7 +16,9 @@ import pl.marcinos.expfor2.Metody.AtakPotwora;
 import pl.marcinos.expfor2.Metody.ButtonPotkow;
 import pl.marcinos.expfor2.Metody.RegeneracjaPotworow;
 import pl.marcinos.expfor2.Metody.Set;
+import pl.marcinos.expfor2.Metody.Skille;
 import pl.marcinos.expfor2.Metody.Walka;
+import pl.marcinos.expfor2.Paladyn.Menu.PaladynLevels;
 import pl.marcinos.expfor2.Paladyn.Menu.PaladynMenuActivity;
 import pl.marcinos.expfor2.R;
 
@@ -106,37 +108,13 @@ public class PaladynFishman extends AppCompatActivity {
                 PaladynFishman.this.finish();
             }
         });
-        if(paladyn.sett==1)
-        {
-            imageBatakuj=(ImageView)findViewById(R.id.imageBatak);
-            imageBskill=(ImageView)findViewById(R.id.imageBskill);
-            imageB= (ImageView)findViewById(R.id.imageB);
-
-        }
-        else if(paladyn.sett==2)
-        {
-            imageBatakuj=(ImageView)findViewById(R.id.imageAatak);
-            imageB= (ImageView)findViewById(R.id.imageA);
-            imageBskill=(ImageView)findViewById(R.id.imageAskill);
-        }
-        else if(paladyn.sett==3)
-        {
-            imageBatakuj=(ImageView)findViewById(R.id.imageSatak);
-            imageB= (ImageView)findViewById(R.id.imageS);
-            imageBskill=(ImageView)findViewById(R.id.imageSskill);
-        }
-        else if(paladyn.sett==4)
-        {
-            imageBatakuj=(ImageView)findViewById(R.id.imageDatak);
-            imageB= (ImageView)findViewById(R.id.imageD);
-            imageBskill=(ImageView)findViewById(R.id.imageDskill);
-        }
-
-        imageBD= (ImageView)findViewById(R.id.imageD);
-        imageDskill= (ImageView)findViewById(R.id.imageDskill);
-        imageDatak= (ImageView)findViewById(R.id.imageDatak);
-        Set.zmianaSetuWalkaIntSetD(paladyn,imageBb,imageBa,imageBs,imageBD);
-
+        imageBatakuj=(ImageView)findViewById(R.id.imageBatak);
+        imageBskill=(ImageView)findViewById(R.id.imageBskill);
+        imageB= (ImageView)findViewById(R.id.imageB);
+        imageB.setVisibility(View.VISIBLE);
+        PaladynLevels.SetCheck(paladyn,imageB,imageBatakuj,imageBskill);
+        buttonSkill=(ImageButton)findViewById(R.id.buttonSkill);
+        Skille.paladynDifference(buttonSkill, imageTimer);
 
 
         textHpB=(TextView)findViewById(R.id.textHpB);

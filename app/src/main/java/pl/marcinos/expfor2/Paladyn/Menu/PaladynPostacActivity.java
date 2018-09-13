@@ -86,8 +86,10 @@ public class PaladynPostacActivity extends AppCompatActivity {
                 login.setAtakcritical(paladyn.atakcritical);
                 login.setDrop(paladyn.drop);
                 login.setPoziomUlepszeniaZbroji(paladyn.poziomUlepszeniaZbroji);
-
-
+                login.setPierscienVolda(paladyn.pierscienVolda);
+                login.setNaszyjnikTorosa(paladyn.naszyjnikTorosa);
+                login.setKolczykiLajamira(paladyn.kolczykiLajamira);
+                login.setProfesja(paladyn.profesja);
                 login.setObrona(paladyn.obrona);
                 login.setExp(paladyn.exp);
                 login.setLvl(paladyn.lvl);
@@ -103,7 +105,10 @@ public class PaladynPostacActivity extends AppCompatActivity {
 
                 login.setKlucz(paladyn.klucz);
                 login.setOdlamek(paladyn.odlamek);
-
+                login.setIloscKamieni(paladyn.getIloscKamieni());
+                login.setIloscKamieniPewnych(paladyn.getIloscKamieni());
+                login.setIloscMonumentow(paladyn.getIloscMonumentow());
+                login.setIloscKluczy(paladyn.getIloscKluczy());
 ////                login.setNazwa(mag.nazwa);
 //
 //
@@ -145,7 +150,7 @@ public class PaladynPostacActivity extends AppCompatActivity {
 
 
 
-        textKlasa.setText("Twoja klasa : Wojownik");
+        textKlasa.setText("Twoja Profesja: "+paladyn.getProfesja());
         texthp.setText("Twoje życie : "+ paladyn.hpbohater+"/"+PaladynMenuActivity.paladynhp.hpbohater);
         textAtk.setText("Twój atk : "+ paladyn.atkbohater);
         textLvl.setText("Twój lvl : "+ paladyn.lvl);

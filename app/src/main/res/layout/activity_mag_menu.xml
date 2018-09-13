@@ -334,7 +334,7 @@
         </android.support.v7.widget.CardView>
 
         <android.support.v7.widget.CardView
-            android:id="@+id/sklep"
+            android:id="@+id/karczma"
 
             app:cardBackgroundColor="@color/colorRamekMenu"
 
@@ -370,12 +370,12 @@
                     <ImageView
                         android:layout_width="108dp"
                         android:layout_height="104dp"
-                        android:src="@drawable/shop"
+                        android:src="@drawable/karczmaicon"
                         android:layout_gravity="center_horizontal"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sklep"
+                        android:text="Karczma"
                         android:layout_gravity="center"
                         android:textAlignment="center"
                         android:textColor="@color/colorPodswietlenia"

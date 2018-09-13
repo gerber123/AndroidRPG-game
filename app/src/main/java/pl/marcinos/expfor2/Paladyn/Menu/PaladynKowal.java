@@ -1,6 +1,9 @@
 package pl.marcinos.expfor2.Paladyn.Menu;
 
+import android.content.DialogInterface;
 import android.os.CountDownTimer;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +18,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import pl.marcinos.expfor2.Bohaterowie.Bohaterowie;
+import pl.marcinos.expfor2.Metody.Dialog;
 import pl.marcinos.expfor2.Metody.Set;
 import pl.marcinos.expfor2.Metody.Sklep;
 import pl.marcinos.expfor2.Model.User;
@@ -41,8 +46,9 @@ public class PaladynKowal extends AppCompatActivity {
     ImageView failZbroja;
     FirebaseDatabase database;
     DatabaseReference users;
-    ImageView bron;
-    ImageView zbroja;
+    ImageView imageUlepszenie;
+    ImageView set;
+    public static int score=0;
     public static int a=0;
     public static int b=0;
 
@@ -53,13 +59,15 @@ public class PaladynKowal extends AppCompatActivity {
         textGold = (TextView) findViewById(R.id.textGoldd);
         textItemm = (TextView) findViewById(R.id.textItemm);
         textBron = (TextView) findViewById(R.id.textBron);
+        textGold.setText("Twoje złoto: " + paladyn.hajs);
+        textItemm.setText("Kamienie: " + paladyn.iloscKamieni+" Diamenty: "+paladyn.getIloscKamieniPewnych());
+//        textBron.setText("Różdzka +" + mag.getPoziomUlepszenia());
+        progressBar=(ProgressBar)findViewById(R.id.progressHpP);
+        progressBar=(ProgressBar)findViewById(R.id.progressHpP);
         succes = (ImageView) findViewById(R.id.success);
         fail = (ImageView) findViewById(R.id.fail);
-        textGold.setText("Twoje złoto: " + paladyn.hajs);
-        textItemm.setText("Twoje itemy: " + paladyn.drop);
-//        textBron.setText("Miecze +" + paladyn.getPoziomUlepszenia());
-        progressBar=(ProgressBar)findViewById(R.id.progressHpP);
-//        progressBar=(ProgressBar)findViewById(R.id.progressHpP);
+        database = FirebaseDatabase.getInstance();
+        users = database.getReference("Users");
         View v =this.findViewById(android.R.id.content).getRootView();
 
         buttonUlepsz = (Button) findViewById(R.id.buttonUlepsz);
@@ -72,18 +80,26 @@ public class PaladynKowal extends AppCompatActivity {
 
         progressBarZbroja=(ProgressBar)findViewById(R.id.progressHpZbroja);
 
+
+
+        imageUlepszenie=(ImageView)findViewById(R.id.bron);
+        set=(ImageView)findViewById(R.id.zbroja);
+        Set.zmianaGrafikiSetuPaladyn(paladyn,imageUlepszenie,set);
+
+
         buttonUlepszZbroje = (Button) findViewById(R.id.buttonUlepszZbroje);
         buttonWymienZbroje = (Button) findViewById(R.id.buttonWymienZbroje);
-
-        bron=(ImageView)findViewById(R.id.bron);
-        zbroja=(ImageView)findViewById(R.id.zbroja);
-        Set.zmianaGrafikiSetuPaladyn(paladyn,bron,zbroja);
-
-//        textZbroja.setText("Zbroja +" + paladyn.getPoziomUlepszeniaZbroji());
-        database = FirebaseDatabase.getInstance();
-        users = database.getReference("Users");
+//        textZbroja.setText("Zbroja +" + mag.getPoziomUlepszeniaZbroji());
         Set.zmianaNazwSetu(paladyn,textBron,textZbroja);
 
+        if(paladyn.iloscKamieniPewnych>=1||paladyn.iloscKamieni>=1)
+        {
+            buttonWymien.setEnabled(true);
+        }
+        else
+        {
+            buttonWymien.setEnabled(false);
+        }
         if(paladyn.hajs<=0)
         {
             buttonUlepsz.setEnabled(false);
@@ -91,15 +107,6 @@ public class PaladynKowal extends AppCompatActivity {
         else
         {
             buttonUlepsz.setEnabled(true);
-        }
-        if(paladyn.drop.equalsIgnoreCase("kamien")||paladyn.drop.equalsIgnoreCase("kamienPewny"))
-        {
-            buttonWymien.setEnabled(true);
-            buttonWymienZbroje.setEnabled(true);
-        }
-        else
-        {
-            buttonWymien.setEnabled(false);
         }
         progressBar.setMax(9);
 //        progressBar.setProgress(a);
@@ -133,8 +140,8 @@ public class PaladynKowal extends AppCompatActivity {
                         @Override
                         public void onFinish()
                         {
-//                        buttonWymien.setEnabled(true);
-//                        buttonUlepsz.setEnabled(true);
+//                            buttonWymien.setEnabled(true);
+//                            buttonUlepsz.setEnabled(true);
                             if(paladyn.hajs<=0)
                             {
                                 buttonUlepsz.setEnabled(false);
@@ -143,10 +150,8 @@ public class PaladynKowal extends AppCompatActivity {
                             {
                                 buttonUlepsz.setEnabled(true);
                             }
-                            Sklep.ulepsz(fail,succes,paladyn,paladynhp,v,textGold);
-                            Set.zmianaNazwSetu(paladyn,textBron,textZbroja);
-//                            textBron.setText("Miecze +" + paladyn.getPoziomUlepszenia());
-                            if(paladyn.drop.equalsIgnoreCase("kamien")||paladyn.drop.equalsIgnoreCase("kamienPewny"))
+                            if(paladyn.iloscKamieniPewnych>=1||paladyn.iloscKamieni>=1)
+
                             {
                                 buttonWymien.setEnabled(true);
                             }
@@ -154,28 +159,10 @@ public class PaladynKowal extends AppCompatActivity {
                             {
                                 buttonWymien.setEnabled(false);
                             }
-//                        users.addValueEventListener(new ValueEventListener() {
-//                            @Override
-//                            public void onDataChange(DataSnapshot dataSnapshot)
-//                            {
-//                                User login =dataSnapshot.child(user123.getUserName()).getValue(User.class);
-//                                login.setPoziomUlepszenia(archer.poziomUlepszenia);
-////                                login.setHpbohater(archer.hpbohater);
-//                                login.setHajs(archer.hajs);
-//                                login.setAtkbohater(archer.atkbohater);
-////                                login.setSett(archer.sett);
-//                                login.setDrop(archer.drop);
-////                                login.setPoziomUlepszeniaZbroji(archer.poziomUlepszeniaZbroji);
-//
-//
-//                                users.child(user123.getUserName()).setValue(login);
-//                            }
-//
-//                            @Override
-//                            public void onCancelled(DatabaseError databaseError) {
-//
-//                            }
-//                        });
+                            Sklep.ulepsz(fail,succes,paladyn,paladynhp,v,textGold);
+//                            textBron.setText("Różdzka +" + mag.getPoziomUlepszenia());
+                            Set.zmianaNazwSetu(paladyn,textBron,textZbroja);
+
                         }
 
                     }.start();
@@ -189,7 +176,9 @@ public class PaladynKowal extends AppCompatActivity {
             @Override
             public void onClick(final View v)
             {
-
+                if(paladyn.getIloscKamieniPewnych()>=1&&paladyn.getIloscKamieni()>=1) {
+                    kamienLubDiamnet(paladyn, v);
+                }
                 buttonWymien.setEnabled(false);
                 buttonUlepsz.setEnabled(false);
                 progressBar.setProgress(0);
@@ -199,7 +188,7 @@ public class PaladynKowal extends AppCompatActivity {
 
                         @Override
                         public void onTick(long millisUntilFinished) {
-                            if(a==10)
+                            if(a==10&&(score==1||score==2))
                             {
                                 this.cancel();
                             }
@@ -215,10 +204,20 @@ public class PaladynKowal extends AppCompatActivity {
                         public void onFinish()
                         {
 
+                            if(paladyn.getIloscKamieni()>=1&&paladyn.getIloscKamieniPewnych()>=1) {
+                                Sklep.ulepszzaKamien(fail, succes, paladyn, paladynhp, v, textItemm, score);
+                                Set.zmianaNazwSetu(paladyn, textBron, textZbroja);
+                            }
 
-                            Sklep.ulepszzaKamien(fail,succes,paladyn,paladynhp,v,textItemm);
-//                            textBron.setText("Miecze +" + paladyn.getPoziomUlepszenia());
-                            Set.zmianaNazwSetu(paladyn,textBron,textZbroja);
+                            if(paladyn.getIloscKamieni()>=1&&paladyn.getIloscKamieniPewnych()==0) {
+                                Set.zmianaNazwSetu(paladyn, textBron, textZbroja);
+                                Sklep.ulepszzaKamien(fail, succes, paladyn, paladynhp, v, textItemm, 1);
+                            }
+                            if(paladyn.getIloscKamieniPewnych()>=1&&paladyn.getIloscKamieni()==0) {
+                                Sklep.ulepszzaKamien(fail, succes, paladyn, paladynhp, v, textItemm, 2);
+//                            textBron.setText("Rózdzka +" + mag.getPoziomUlepszenia());
+                                Set.zmianaNazwSetu(paladyn, textBron, textZbroja);
+                            }
                             if(paladyn.hajs<=0)
                             {
                                 buttonUlepsz.setEnabled(false);
@@ -227,10 +226,11 @@ public class PaladynKowal extends AppCompatActivity {
                             {
                                 buttonUlepsz.setEnabled(true);
                             }
-                            if(paladyn.drop.equalsIgnoreCase("kamien")||paladyn.drop.equalsIgnoreCase("kamienPewny"))
+
+                            if(paladyn.iloscKamieniPewnych>=1||paladyn.iloscKamieni>=1)
+
                             {
                                 buttonWymien.setEnabled(true);
-                                buttonWymienZbroje.setEnabled(true);
                             }
                             else
                             {
@@ -238,11 +238,12 @@ public class PaladynKowal extends AppCompatActivity {
                             }
                         }
 
-
                     }.start();
 
                 }}
         });
+
+
 
 
 
@@ -254,10 +255,9 @@ public class PaladynKowal extends AppCompatActivity {
         {
             buttonUlepszZbroje.setEnabled(true);
         }
-        if(paladyn.drop.equalsIgnoreCase("kamien")||paladyn.drop.equalsIgnoreCase("kamienPewny"))
-        {
+        if(paladyn.iloscKamieniPewnych>=1||paladyn.iloscKamieni>=1)
 
-            buttonWymien.setEnabled(true);
+        {
             buttonWymienZbroje.setEnabled(true);
         }
         else
@@ -296,7 +296,6 @@ public class PaladynKowal extends AppCompatActivity {
                         @Override
                         public void onFinish()
                         {
-
                             if(paladyn.hajs<=0)
                             {
                                 buttonUlepszZbroje.setEnabled(false);
@@ -306,10 +305,10 @@ public class PaladynKowal extends AppCompatActivity {
                                 buttonUlepszZbroje.setEnabled(true);
                             }
                             Sklep.ulepszZbroje(failZbroja,succesZbroja,paladyn,paladynhp,v,textGold);
+//                            textZbroja.setText("Zbroja +" + mag.getPoziomUlepszeniaZbroji());
                             Set.zmianaNazwSetu(paladyn,textBron,textZbroja);
-//
-//                            extZbroja.setText("Zbroja +" + paladyn.getPoziomUlepszeniaZbroji());
-                            if(paladyn.drop.equalsIgnoreCase("kamien")||paladyn.drop.equalsIgnoreCase("kamienPewny"))
+                            if(paladyn.iloscKamieniPewnych>=1||paladyn.iloscKamieni>=1)
+
                             {
                                 buttonWymienZbroje.setEnabled(true);
                             }
@@ -317,28 +316,7 @@ public class PaladynKowal extends AppCompatActivity {
                             {
                                 buttonWymienZbroje.setEnabled(false);
                             }
-//                            users.addValueEventListener(new ValueEventListener() {
-//                                @Override
-//                                public void onDataChange(DataSnapshot dataSnapshot)
-//                                {
-//                                    User login =dataSnapshot.child(user123.getUserName()).getValue(User.class);
-////                                    login.setPoziomUlepszenia(archer.poziomUlepszenia);
-////                                    login.setHpbohater(archer.hpbohater);
-//                                    login.setHajs(archer.hajs);
-////                                    login.setAtkbohater(archer.atkbohater);
-////                                    login.setSett(archer.sett);
-//                                    login.setDrop(archer.drop);
-//                                    login.setPoziomUlepszeniaZbroji(archer.poziomUlepszeniaZbroji);
-//
-//
-//                                    users.child(user123.getUserName()).setValue(login);
-//                                }
-//
-//                                @Override
-//                                public void onCancelled(DatabaseError databaseError) {
-//
-//                                }
-//                            });
+
                         }
 
                     }.start();
@@ -352,11 +330,15 @@ public class PaladynKowal extends AppCompatActivity {
             @Override
             public void onClick(final View v)
             {
-
+                score=0;
+                if(paladyn.getIloscKamieniPewnych()>=1&&paladyn.getIloscKamieni()>=1) {
+                   kamienLubDiamnet(paladyn, v);
+                }
                 buttonWymienZbroje.setEnabled(false);
                 buttonUlepszZbroje.setEnabled(false);
                 progressBarZbroja.setProgress(0);
                 b=0;
+
                 if(b!=10){
                     CountDownTimer t=    new CountDownTimer(1000, 100) {
 
@@ -365,8 +347,10 @@ public class PaladynKowal extends AppCompatActivity {
                             if(b==10)
                             {
                                 this.cancel();
+                                score=0;
                             }
-                            else {
+                            else if(b!=10) {
+
                                 b += 1;
                                 progressBarZbroja.setProgress(b);
                             }
@@ -377,21 +361,33 @@ public class PaladynKowal extends AppCompatActivity {
                         @Override
                         public void onFinish()
                         {
-//                            buttonUlepsz.setEnabled(true);
-//                            buttonWymien.setEnabled(true);
 
-                            Sklep.ulepszzaKamienZbroje(failZbroja,succesZbroja,paladyn,paladynhp,v,textItemm);
-//                            textZbroja.setText("Zbroja +" + paladyn.getPoziomUlepszeniaZbroji());
-                            Set.zmianaNazwSetu(paladyn,textBron,textZbroja);
-                            if(paladyn.hajs<=0)
+                            if(score==0)
                             {
-                                buttonUlepszZbroje.setEnabled(false);
+                                Snackbar.make(v,"Czas na decyzje minął, spróbuj jeszcze raz", Snackbar.LENGTH_LONG).show();
                             }
-                            else
-                            {
-                                buttonUlepszZbroje.setEnabled(true);
+
+                            if(paladyn.getIloscKamieni()>=1&&paladyn.getIloscKamieniPewnych()>=1&&(score==1||score==2)) {
+
+                                Sklep.ulepszzaKamienZbroje(failZbroja, succesZbroja, paladyn, paladynhp, v, textItemm, score);
+                                Set.zmianaNazwSetu(paladyn, textBron, textZbroja);
+
                             }
-                            if(paladyn.drop.equalsIgnoreCase("kamien")||paladyn.drop.equalsIgnoreCase("kamienPewny"))
+
+                            if(paladyn.getIloscKamieni()>=1&&paladyn.getIloscKamieniPewnych()==0) {
+
+                                Sklep.ulepszzaKamienZbroje(failZbroja, succesZbroja, paladyn, paladynhp, v, textItemm, 1);
+                                Set.zmianaNazwSetu(paladyn, textBron, textZbroja);
+
+                            }
+                            if(paladyn.getIloscKamieniPewnych()>=1&&paladyn.getIloscKamieni()==0) {
+                                Sklep.ulepszzaKamienZbroje(failZbroja, succesZbroja, paladyn, paladynhp, v, textItemm, 2);
+//                            textBron.setText("Rózdzka +" + mag.getPoziomUlepszenia());
+                                Set.zmianaNazwSetu(paladyn, textBron, textZbroja);
+
+                            }
+                            if(paladyn.iloscKamieniPewnych>=1||paladyn.iloscKamieni>=1)
+
                             {
                                 buttonWymienZbroje.setEnabled(true);
                             }
@@ -399,28 +395,11 @@ public class PaladynKowal extends AppCompatActivity {
                             {
                                 buttonWymienZbroje.setEnabled(false);
                             }
-//                            users.addValueEventListener(new ValueEventListener() {
-//                                @Override
-//                                public void onDataChange(DataSnapshot dataSnapshot)
-//                                {
-//                                    User login =dataSnapshot.child(user123.getUserName()).getValue(User.class);
-////                                    login.setPoziomUlepszenia(archer.poziomUlepszenia);
-////                                    login.setHpbohater(archer.hpbohater);
-//                                    login.setHajs(archer.hajs);
-////                                    login.setAtkbohater(archer.atkbohater);
-////                                    login.setSett(archer.sett);
-//                                    login.setDrop(archer.drop);
-//                                    login.setPoziomUlepszeniaZbroji(archer.poziomUlepszeniaZbroji);
-//
-//
-//                                    users.child(user123.getUserName()).setValue(login);
-//                                }
-//
-//                                @Override
-//                                public void onCancelled(DatabaseError databaseError) {
-//
-//                                }
-//                            });
+                            if(paladyn.hajs>=150)
+                            {
+                                buttonUlepszZbroje.setEnabled(true);
+                            }
+
                         }
 
                     }.start();
@@ -430,4 +409,31 @@ public class PaladynKowal extends AppCompatActivity {
 
 
     }
+    public static void kamienLubDiamnet(Bohaterowie x, View v)
+    {
+        if(x.getIloscKamieni()>=1&&x.getIloscKamieniPewnych()>=1) {
+            final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(v.getContext());
+            alertDialogBuilder.setTitle("Dylemat");
+            alertDialogBuilder.setMessage("Posiadasz Kamień i Diament, który z materiałów chcesz użyć do ulepszenia? ");
+
+            alertDialogBuilder.setPositiveButton(("Kamień"), new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    score=1;
+                }
+            });
+            alertDialogBuilder.setNegativeButton(("Diament"), new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    score=2;
+                }
+            });
+            alertDialogBuilder.setCancelable(false);
+            alertDialogBuilder.setIcon(R.drawable.ikonaograb);
+            AlertDialog alertDialog = alertDialogBuilder.create();
+
+            alertDialog.show();
+        }
+    }
 }
+

@@ -23,6 +23,7 @@ import pl.marcinos.expfor2.Metody.AtakPotwora;
 import pl.marcinos.expfor2.Metody.ButtonPotkow;
 import pl.marcinos.expfor2.Metody.Ograbienie;
 import pl.marcinos.expfor2.Metody.Set;
+import pl.marcinos.expfor2.Metody.Skille;
 import pl.marcinos.expfor2.Metody.Walka;
 import pl.marcinos.expfor2.R;
 
@@ -263,6 +264,7 @@ public class MagArcher extends AppCompatActivity {
             }
         });
         buttonSkill=(ImageButton)findViewById(R.id.buttonSkill);
+        Skille.magDifference(buttonSkill,imageTimer);
         buttonSkill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -36,7 +36,8 @@ public class SklepPaladyn extends AppCompatActivity {
         textGold = (TextView) findViewById(R.id.textGold);
         textItem = (TextView) findViewById(R.id.textItem);
         textGold.setText("Twoje złoto: " + paladyn.hajs);
-        textItem.setText("Twoje itemy: " + paladyn.drop);
+        textItem.setText("Ilość posiadanych kamieni: "+paladyn.iloscKamieni+", diamentów: "+paladyn.iloscKamieniPewnych);
+
         buttonEq = (Button) findViewById(R.id.buttonEq);
         buttonBandaz.setOnClickListener(new View.OnClickListener() {
             @Override

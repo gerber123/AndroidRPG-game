@@ -8,6 +8,14 @@ import android.widget.ImageView;
 
 public class PvpPrzeciwnik extends Potwory
 {
+
+
+    public PvpPrzeciwnik(double atk, int obrona, int hajs) {
+        this.atk = atk;
+        this.obrona = obrona;
+        this.hajs = hajs;
+    }
+
     @Override
     public String getNazwaPrzeciwnika() {
         return super.getNazwaPrzeciwnika();
@@ -68,8 +76,8 @@ public class PvpPrzeciwnik extends Potwory
     }
 
     @Override
-    public String getAtk() {
-        return super.getAtk();
+    public String getAtkDoListy() {
+        return super.getAtkDoListy();
     }
 
     @Override

@@ -10,7 +10,35 @@ public class User
     public String password;
     public String email;
     public String bohater;
+    public String profesja="brak";
 
+    public int pierscienVolda;
+    public int naszyjnikTorosa;
+    public int kolczykiLajamira;
+
+    public int getPierscienVolda() {
+        return pierscienVolda;
+    }
+
+    public void setPierscienVolda(int pierscienVolda) {
+        this.pierscienVolda = pierscienVolda;
+    }
+
+    public int getNaszyjnikTorosa() {
+        return naszyjnikTorosa;
+    }
+
+    public void setNaszyjnikTorosa(int naszyjnikTorosa) {
+        this.naszyjnikTorosa = naszyjnikTorosa;
+    }
+
+    public int getKolczykiLajamira() {
+        return kolczykiLajamira;
+    }
+
+    public void setKolczykiLajamira(int kolczykiLajamira) {
+        this.kolczykiLajamira = kolczykiLajamira;
+    }
 
     public int iloscZabitychPotworów;
     public int quest1;
@@ -90,10 +118,27 @@ public class User
 
     public int hajs;
     public int lvl;
+    public int mana;
+    public int maxMana;
     public String drop;
     public int staty;
 
 
+    public int getMana() {
+        return mana;
+    }
+
+    public void setMana(int mana) {
+        this.mana = mana;
+    }
+
+    public int getMaxMana() {
+        return maxMana;
+    }
+
+    public void setMaxMana(int maxMana) {
+        this.maxMana = maxMana;
+    }
 
     public String getBohater() {
         return bohater;
@@ -285,6 +330,50 @@ public class User
 
     }
 
+    public String getProfesja() {
+        return profesja;
+    }
+
+    public void setProfesja(String profesja) {
+        this.profesja = profesja;
+    }
+    public int iloscKamieni;
+    public int iloscKamieniPewnych;
+    public int iloscKluczy;
+    public int iloscMonumentow;
+
+    public int getIloscKamieni() {
+        return iloscKamieni;
+    }
+
+    public void setIloscKamieni(int iloscKamieni) {
+        this.iloscKamieni = iloscKamieni;
+    }
+
+    public int getIloscKamieniPewnych() {
+        return iloscKamieniPewnych;
+    }
+
+    public void setIloscKamieniPewnych(int iloscKamieniPewnych) {
+        this.iloscKamieniPewnych = iloscKamieniPewnych;
+    }
+
+    public int getIloscKluczy() {
+        return iloscKluczy;
+    }
+
+    public void setIloscKluczy(int iloscKluczy) {
+        this.iloscKluczy = iloscKluczy;
+    }
+
+    public int getIloscMonumentow() {
+        return iloscMonumentow;
+    }
+
+    public void setIloscMonumentow(int iloscMonumentow) {
+        this.iloscMonumentow = iloscMonumentow;
+    }
+
     public User(String userName, String password, String email, String Bohater) {
         this.online=1;
         this.userName = userName;
@@ -301,8 +390,15 @@ public class User
         this.quest4=0;
         this.quest5=0;
         this.quest6=0;
+        this.iloscKamieni=0;
+        this.iloscKamieniPewnych=0;
+        this.iloscKluczy=0;
+        this.iloscMonumentow=0;
         this.iloscZabitychPotworów=0;
-
+        this.profesja="brak";
+        this.pierscienVolda=0;
+        this.kolczykiLajamira=0;
+        this.naszyjnikTorosa=0;
         if(Bohater.equals("mag"))
         {
 
@@ -316,7 +412,8 @@ public class User
             this.hajs=200;
             this.lvl=1;
 
-
+            this.mana=600;
+            this.maxMana=600;
             this.sett=1;
             this.drop="brak";
             this.staty=5;
@@ -361,7 +458,8 @@ public class User
         }
         else if(Bohater.equals("archer"))
         {
-
+            this.maxMana=8;
+            this.mana=0;
             this.hpbohater=2420;
             this.atkbohater=400;
             this.exp=0;

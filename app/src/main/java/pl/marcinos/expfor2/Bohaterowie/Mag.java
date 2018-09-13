@@ -19,18 +19,27 @@ public class Mag extends Bohaterowie
     {
         super(hpbohater, atkbohater, exp,hajs);
     }
+
     public Mag()
     {
+        this.mana=600;
+        this.maxMana=600;
+        this.iloscKamieni=0;
+        this.iloscKamieniPewnych=0;
+        this.iloscKluczy=0;
+        this.iloscMonumentow=0;
         this.hpbohater=2220;
         this.maxhp=2220;
         this.maxexp=30;
         this.atkbohater=500;
-
+        this.profesja="brak";
         this.exp=0;
         this.hajs=150;
         this.lvl=1;
         this.drop="brak";
-
+        this.kolczykiLajamira=0;
+        this.naszyjnikTorosa=0;
+        this.pierscienVolda=0;
         this.quest1=0;
         this.quest2=0;
         this.quest3=0;

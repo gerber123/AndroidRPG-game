@@ -129,9 +129,12 @@ public class Drop
 //            droprare=rand.nextInt(2)+1;
 //            droprareBest=rand.nextInt(4)+1;
             droprareKlucz=rand.nextInt(25)+1;
-            x.odlamek="Antyczny fragment";
-            x.drop="kamienPewny";
 
+//            x.odlamek="Antyczny fragment";
+//            x.drop="kamienPewny";
+            x.iloscKamieniPewnych+=1;
+            x.iloscKamieni+=1;
+            x.iloscMonumentow+=1;
 
 
             Snackbar.make(v,"Zwycięstwo drop: " + +Drop.getDrophajsu()+"$, Exp:"+Drop.getDropexp(),Snackbar.LENGTH_SHORT).setDuration(3000).setActionTextColor(Color.RED).show();
@@ -144,19 +147,22 @@ public class Drop
         x.exp+=dropexp;
         if(droprare==2)
         {
-            x.drop="kamien";
+//            x.drop="kamien";
+            x.iloscKamieni+=1;
             Snackbar.make(v,"Udało Ci się zdobyć kamień, wymień go w sklepie",Snackbar.LENGTH_LONG).setDuration(3000).setActionTextColor(Color.RED).show();
 
          }
         if(droprareBest==4)
         {
-            x.drop="kamienPewny";
+//            x.drop="kamienPewny";
+            x.iloscKamieniPewnych+=1;
             Snackbar.make(v,"Udało Ci się zdobyć Pewny kamień, Ulepsz broń lub Zbroje!",Snackbar.LENGTH_LONG).setDuration(3000).setActionTextColor(Color.RED).show();
 
         }
         if(droprareKlucz==4)
         {
-            x.klucz="Posiadany";
+            x.iloscKluczy+=1;
+//            x.klucz="Posiadany";
             Snackbar.make(v,"Udało Ci się zdobyć klucz do Komnaty Smoka",Snackbar.LENGTH_LONG).setDuration(3000).setActionTextColor(Color.RED).show();
 
         }

@@ -1,58 +1,35 @@
 package pl.marcinos.expfor2.Paladyn.Menu;
 
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.os.Handler;
 import android.support.design.widget.Snackbar;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
-import android.text.Layout;
 import android.view.View;
-import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
-import java.util.Timer;
-import java.util.TimerTask;
-
-import pl.marcinos.expfor2.Archer.Menu.ArcherMapaPotworowActivity;
-import pl.marcinos.expfor2.Archer.Menu.ArcherMenuActivity;
-import pl.marcinos.expfor2.Archer.Menu.ArcherPostacActivity;
 import pl.marcinos.expfor2.Archer.Menu.ArcherRanking;
-import pl.marcinos.expfor2.Archer.Menu.ArcherWyborPoziomuActivity;
-import pl.marcinos.expfor2.Archer.Menu.MiniGraElf;
-import pl.marcinos.expfor2.Archer.Menu.SklepArcher;
-import pl.marcinos.expfor2.Archer.Walka.WyborPrzeciwnika.ArcherWyborJeden;
-import pl.marcinos.expfor2.Bohaterowie.Mag;
+import pl.marcinos.expfor2.Bohaterowie.Itemy;
 import pl.marcinos.expfor2.Bohaterowie.Paladyn;
-import pl.marcinos.expfor2.IntroActivity.WyborActivity;
-import pl.marcinos.expfor2.Mag.Menu.MagMenuActivity;
-import pl.marcinos.expfor2.Mag.Menu.MiniGraMag;
-import pl.marcinos.expfor2.Metody.Dialog;
-import pl.marcinos.expfor2.Metody.Set;
-import pl.marcinos.expfor2.Metody.SoundPlayer;
-import pl.marcinos.expfor2.Model.User;
 import pl.marcinos.expfor2.Paladyn.superWalka.Pvp.PaladynPvpRanking;
-import pl.marcinos.expfor2.Paladyn.superWalka.WyborPrzeciwnika.WyborJedenActivity;
 import pl.marcinos.expfor2.R;
-
-import static android.support.v4.app.ActivityCompat.finishAffinity;
-import static pl.marcinos.expfor2.IntroActivity.LoginActivity.user123;
 
 public class PaladynMenuActivity extends AppCompatActivity {
 
     public static Paladyn paladyn = new Paladyn();
     public static Paladyn paladynhp = new Paladyn();
+    public static Itemy kamien = new Itemy("Kamien","1500",paladyn.getIloscKamieni(),R.drawable.kamien,"Magiczny Kamień który umożliwa ulepszanie wyposażenia");
+    public static Itemy kamienPewny = new Itemy("Diament","2300",paladyn.getIloscKamieniPewnych(),R.drawable.magicznykamien,"Antyczny kamień który umożliwia ulepszenie wyposażenia");
+    public static Itemy antycznyFragment = new Itemy("Monument","1500",paladyn.getIloscMonumentow(),R.drawable.artefakt,"Artefakt umożliwiający uzyskać najlepsza zbroję");
+    public static Itemy klucz = new Itemy("Klucz","1500",paladyn.getIloscKluczy(),R.drawable.key,"Klucz pozwalający wejśc do jamy Antharasa");
+    public static Itemy zloto = new Itemy("Gold"," ",paladyn.getHajs(),R.drawable.redball," ");
+    public static Itemy set = new Itemy("Set"," ",paladyn.getSett(),R.drawable.redball,"Zbroja pozwalająca Ci przetrwać na polu bitwy");
+    public static Itemy bron = new Itemy("Wep"," ",paladyn.getSett(),R.drawable.redball,"Wyposażenie pozwalające Ci pokonywać potwory");
+    public static Itemy kolczykLajamira = new Itemy("Kolczyk Lajamira"," ",paladyn.getKolczykiLajamira(),R.drawable.necklace,"Kolczyki Lajamira, dodają Twoim Umięjtnośćia o 200 mocy przy użyciu umięjtnośći oraz zwiększają Twoją szanse krytyczna ");
+    public static Itemy pierscienVolda = new Itemy("Pierścień Volda"," ",paladyn.getPierscienVolda(),R.drawable.voldring,"Pierścień Volda, Vold Ofiaruję Ci Pierścień który powoduje że Twoje ciosy są precyzyjniesze a siła krytyczna zwiększa się o 200, oraz atak o 250");
+    public static Itemy naszyjnikTorosa = new Itemy("Naszyjnik Torosa"," ",paladyn.getNaszyjnikTorosa(),R.drawable.voldearring,"Naszyjnik Torosa, który ofiaruje Ci za bycie honorowym walecznym przeciwnikiem. Dodaje Ci 300 Pancerza i 300 punktów Życia");
 
 
     FirebaseDatabase database;
@@ -71,6 +48,18 @@ public class PaladynMenuActivity extends AppCompatActivity {
 
         postac=(CardView)findViewById(R.id.postac);
 
+        if(paladyn.getProfesja().equalsIgnoreCase("berserker"))
+        {
+            paladyn.skillDamage=650;
+        }
+        if(paladyn.getProfesja().equalsIgnoreCase("paladyn"))
+        {
+            paladyn.skillDamage=350;
+        }
+        if(paladyn.getProfesja().equalsIgnoreCase("brak"))
+        {
+            paladyn.skillDamage=50;
+        }
         postac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,12 +78,12 @@ public class PaladynMenuActivity extends AppCompatActivity {
             }
         });
 
-        sklep = (CardView) findViewById(R.id.sklep);
+        sklep = (CardView) findViewById(R.id.karczma);
         sklep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                    Intent intent = new Intent(PaladynMenuActivity.this,NewSklepPalek.class);
+                    Intent intent = new Intent(PaladynMenuActivity.this,PaladynKarczma.class);
                     startActivity(intent);
 
 

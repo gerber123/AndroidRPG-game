@@ -1,16 +1,11 @@
 package pl.marcinos.expfor2.Metody;
 
-import android.content.Intent;
-import android.media.Image;
-import android.support.design.widget.Snackbar;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 
-import pl.marcinos.expfor2.Mag.Menu.MagMenuActivity;
 import pl.marcinos.expfor2.Mag.Walka.Walka.Walka.MagKot;
-import pl.marcinos.expfor2.R;
 
 /**
  * Created by marci on 10.03.2018.

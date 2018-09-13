@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+
+        android:layout_margin="8dp"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="16dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="30dp"
+        android:layout_height="520dp"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="520dp"
+            android:orientation="vertical"
+            android:background="@drawable/library"
+
+
+
+            >
+
+            <ImageView
+
+                android:id="@+id/imageView3"
+                android:layout_width="250dp"
+                android:layout_gravity="center"
+                android:layout_height="250dp"
+                android:padding="10dp"
+                android:src="@drawable/lajamir"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+
+                />
+            <TextView
+                android:id="@+id/textNazwisko"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textImie"
+                android:layout_below="@+id/textImie"
+                android:layout_gravity="center"
+                android:foregroundGravity="center"
+                android:textAlignment="gravity"
+                android:textColor="@color/colorTekstu"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:text="Witaj młody czarodzieju"
+                android:textSize="25sp" />
+
+
+
+
+
+            <TextView
+                android:id="@+id/textProsfesja"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textWiek"
+                android:layout_below="@+id/textWiek"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/colorForTheExpo"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:text="Osiągnąłeś błogosławiony stan 10 poziomu, przyszła pora aby sprecyzować swoją sciężke na drodze Magii, wybierz jeden z dwóch typów nauczania aby dowiedzieć się o nich więcej"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/textInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/textWiek"
+                android:layout_below="@+id/textWiek"
+                android:layout_gravity="center"
+                android:gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/colorForTheExpo"
+                android:padding="5dp"
+                android:textStyle="bold"
+                android:text="Osiągnąłeś błogosławiony stan 10 poziomu, przyszła pora aby sprecyzować swoją sciężke na drodze Magii, wybierz jeden z dwóch typów nauczania aby dowiedzieć się o nich więcej"
+                android:textSize="15sp" />
+
+
+
+
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>

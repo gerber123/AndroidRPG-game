@@ -18,12 +18,17 @@ public class Paladyn extends Bohaterowie
     }
     public Paladyn()
     {
+        this.iloscKamieni=0;
+        this.iloscKamieniPewnych=0;
+        this.iloscKluczy=0;
+        this.iloscMonumentow=0;
         this.sett=1;
         this.hpbohater=3200;
         this.atkbohater=300;
         this.maxexp=30;
         this.maxhp=3200;
         this.exp=0;
+        this.profesja="brak";
         this.hajs=150;
         this.lvl=1;
         this.drop="brak";
@@ -45,7 +50,9 @@ public class Paladyn extends Bohaterowie
         this.poziomUlepszeniaZbroji=0;
         this.klucz="brak";
         this.odlamek="brak";
-
+        this.kolczykiLajamira=0;
+        this.naszyjnikTorosa=0;
+        this.pierscienVolda=0;
         this.quest1=0;
         this.quest2=0;
         this.quest3=0;

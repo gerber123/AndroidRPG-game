@@ -1,7 +1,6 @@
 package pl.marcinos.expfor2.Paladyn.superWalka.WyborPrzeciwnika;
 
 import android.content.Context;
-import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -73,7 +72,7 @@ public class MyAdapter extends BaseAdapter
 
         viewHolder.name.setText(potworyList.get(position).getName());
         viewHolder.hp.setText("Hp: "+potworyList.get(position).getHp());
-        viewHolder.atk.setText("Atk: "+potworyList.get(position).getAtk());
+        viewHolder.atk.setText("Atk: "+potworyList.get(position).getAtkDoListy());
         viewHolder.lvl.setText("Lvl:"+potworyList.get(position).getLvl());
 
 

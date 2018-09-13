@@ -81,7 +81,6 @@ public class ArcherQuesty extends AppCompatActivity {
         KatakumbyStan=(TextView)findViewById(R.id.KatakumbyStan);
 
         KraniecSwiatowStan=(TextView)findViewById(R.id.KraniecSwiatowStan);
-        Questy.stanQuesta(archer,WzgorzaFaraonaStan,ZatrutaWyspaStan,KatakumbyStan,LodowiecGeistaStan,KraniecSwiatowStan);
 
         buttonWzgorzaFaraona = (Button) findViewById(R.id.buttonWzgorzaFaraona);
         buttonWzgorzaFaraona.setOnClickListener(new View.OnClickListener() {
@@ -122,11 +121,14 @@ public class ArcherQuesty extends AppCompatActivity {
                 showSignUpDialog(archer, kot,questKraniec, KraniecSwiatowStan);
             }
         });
+        Questy.stanQuesta(buttonWzgorzaFaraona,buttonZatrutaWyspa,buttonKatakumby,buttonKraniecSwiatow,buttonLodowiecGeista,archer,WzgorzaFaraonaStan,ZatrutaWyspaStan,KatakumbyStan,LodowiecGeistaStan,KraniecSwiatowStan);
+        Questy.sprawdzMisje(buttonWzgorzaFaraona,buttonZatrutaWyspa,buttonKatakumby,buttonKraniecSwiatow,buttonLodowiecGeista,archer);
+
     }
 
 
     private void showSignUpDialog(final Bohaterowie x, final Potwory y, final Questy quest, final TextView StanQuestaText) {
-        AlertDialog.Builder alertDialog = new AlertDialog.Builder(ArcherQuesty.this,R.style.CustomDialogg);
+        AlertDialog.Builder alertDialog = new AlertDialog.Builder(ArcherQuesty.this,R.style.AlertDialogTheme);
 
 
 
@@ -165,7 +167,9 @@ public class ArcherQuesty extends AppCompatActivity {
                 }
                 else {
                     quest.zaczetoMisje(x, y, StanQuestaText);
-                    Questy.stanQuesta(archer, WzgorzaFaraonaStan, ZatrutaWyspaStan, KatakumbyStan, LodowiecGeistaStan, KraniecSwiatowStan);
+                    Questy.stanQuesta(buttonWzgorzaFaraona,buttonZatrutaWyspa,buttonKatakumby,buttonKraniecSwiatow,buttonLodowiecGeista,archer,WzgorzaFaraonaStan,ZatrutaWyspaStan,KatakumbyStan,LodowiecGeistaStan,KraniecSwiatowStan);
+                    Questy.sprawdzMisje(buttonWzgorzaFaraona,buttonZatrutaWyspa,buttonKatakumby,buttonKraniecSwiatow,buttonLodowiecGeista,archer);
+
                     Toast.makeText(getApplicationContext(), "Rozpocząłeś Zadanie", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -179,7 +183,8 @@ public class ArcherQuesty extends AppCompatActivity {
 
 
                         quest.wykonanoMisje(x, y,pokazQuesta, quest,StanQuestaText);
-                        Questy.stanQuesta(archer,WzgorzaFaraonaStan,ZatrutaWyspaStan,KatakumbyStan,LodowiecGeistaStan,KraniecSwiatowStan);
+                    Questy.stanQuesta(buttonWzgorzaFaraona,buttonZatrutaWyspa,buttonKatakumby,buttonKraniecSwiatow,buttonLodowiecGeista,archer,WzgorzaFaraonaStan,ZatrutaWyspaStan,KatakumbyStan,LodowiecGeistaStan,KraniecSwiatowStan);
+                    Questy.sprawdzMisje(buttonWzgorzaFaraona,buttonZatrutaWyspa,buttonKatakumby,buttonKraniecSwiatow,buttonLodowiecGeista,archer);
 
 
                 }
@@ -188,7 +193,9 @@ public class ArcherQuesty extends AppCompatActivity {
         }
         else if(quest.stanQuesta==2)
         {
-            Questy.stanQuesta(archer,WzgorzaFaraonaStan,ZatrutaWyspaStan,KatakumbyStan,LodowiecGeistaStan,KraniecSwiatowStan);
+            Questy.stanQuesta(buttonWzgorzaFaraona,buttonZatrutaWyspa,buttonKatakumby,buttonKraniecSwiatow,buttonLodowiecGeista,archer,WzgorzaFaraonaStan,ZatrutaWyspaStan,KatakumbyStan,LodowiecGeistaStan,KraniecSwiatowStan);
+            Questy.sprawdzMisje(buttonWzgorzaFaraona,buttonZatrutaWyspa,buttonKatakumby,buttonKraniecSwiatow,buttonLodowiecGeista,archer);
+
             textQuesta.setText("Ile już zabiłeś " + quest.getIleZabic()+ " / " + quest.getIleZabic());
             textQuesta.setTextColor(Color.GREEN);
         }

@@ -220,7 +220,7 @@ public class MagMapaPotworowActivity extends AppCompatActivity {
 
 
         klucz=(TextView)wejscie.findViewById(R.id.klucz);
-        klucz.setText("Klucz: "+x.klucz);
+        klucz.setText("Klucz: "+mag.iloscKluczy);
 
         alertDialog.setView(wejscie);
 
@@ -233,12 +233,12 @@ public class MagMapaPotworowActivity extends AppCompatActivity {
         alertDialog.setPositiveButton("Wejdź", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                if(mag.klucz.equalsIgnoreCase("posiadany"))
+                if(mag.iloscKluczy>=1)
                 {
                     Intent intent = new Intent(MagMapaPotworowActivity.this, MagBoss.class);
                     startActivity(intent);
                     MagMapaPotworowActivity.this.finish();
-                    mag.klucz="brak";
+                    mag.iloscKluczy-=1;
                 }
                 else
                 {

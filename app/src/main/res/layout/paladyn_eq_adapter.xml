@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:background="@drawable/letter"
+        android:layout_height="250dp">
+
+        <ImageView
+            android:paddingRight="10dp"
+            android:id="@+id/imageView2"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="38dp"
+            android:layout_marginTop="45dp"
+            app:srcCompat="@mipmap/ic_launcher" />
+
+    <TextView
+
+        android:id="@+id/textView_name"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/imageView2"
+        android:layout_marginLeft="20dp"
+        android:layout_marginEnd="20dp"
+        android:text="TextView"
+        android:textColor="@color/colorForTheExp"
+
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView_wartosc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignStart="@+id/textView_name"
+        android:layout_below="@+id/textView_name"
+        android:text="TextView"
+        android:textColor="@color/colorTekstuu"
+        android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/textView_ilosc"
+            android:textColor="@color/colorTekstuu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignStart="@+id/textView_wartosc"
+            android:layout_below="@+id/textView_wartosc"
+            android:text="TextView"
+            android:textSize="15sp" />
+        <TextView
+            android:id="@+id/textView_opis"
+            android:textColor="@color/colorTekstuu"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignStart="@+id/textView_ilosc"
+            android:layout_below="@+id/textView_ilosc"
+            android:text="TextView"
+            android:textSize="12sp" />
+
+
+    </RelativeLayout>

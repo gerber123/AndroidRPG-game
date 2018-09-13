@@ -8,7 +8,10 @@ import pl.marcinos.expfor2.Model.User;
 
 public class Bohaterowie extends User
 {
-
+    public int pierscienVolda;
+    public int naszyjnikTorosa;
+    public int kolczykiLajamira;
+    public int mana;
     public int hpbohater;
     public int atkbohater;
     public int exp;
@@ -20,10 +23,48 @@ public class Bohaterowie extends User
     public int quest2;
     public int quest3;
     public int quest4;
+    public int iloscKamieni;
+    public int iloscKamieniPewnych;
+    public int iloscKluczy;
+    public int iloscMonumentow;
     public int quest5;
     public int quest6;
     public int ileTrzebaZabic;
+    public String profesja;
 
+
+
+    public int getPierscienVolda() {
+        return pierscienVolda;
+    }
+
+    public void setPierscienVolda(int pierscienVolda) {
+        this.pierscienVolda = pierscienVolda;
+    }
+
+    public int getNaszyjnikTorosa() {
+        return naszyjnikTorosa;
+    }
+
+    public void setNaszyjnikTorosa(int naszyjnikTorosa) {
+        this.naszyjnikTorosa = naszyjnikTorosa;
+    }
+
+    public int getKolczykiLajamira() {
+        return kolczykiLajamira;
+    }
+
+    public void setKolczykiLajamira(int kolczykiLajamira) {
+        this.kolczykiLajamira = kolczykiLajamira;
+    }
+
+    public String getProfesja() {
+        return profesja;
+    }
+
+    public void setProfesja(String profesja) {
+        this.profesja = profesja;
+    }
 
     public int getIloscZabitychPotworów() {
         return iloscZabitychPotworów;
@@ -284,10 +325,28 @@ public class Bohaterowie extends User
     public int voteScore;
     public String password;
     public int online;
+    public int maxMana;
     public int poziomUlepszenia;
     public int poziomUlepszeniaZbroji;
     public String klucz;
     public String odlamek;
+
+
+    public int getMana() {
+        return mana;
+    }
+
+    public void setMana(int mana) {
+        this.mana = mana;
+    }
+
+    public int getMaxMana() {
+        return maxMana;
+    }
+
+    public void setMaxMana(int maxMana) {
+        this.maxMana = maxMana;
+    }
 
     public String getOdlamek() {
         return odlamek;
@@ -319,6 +378,46 @@ public class Bohaterowie extends User
 
     public void setPoziomUlepszenia(int poziomUlepszenia) {
         this.poziomUlepszenia = poziomUlepszenia;
+    }
+
+    public int getIloscKamieni() {
+        return iloscKamieni;
+    }
+
+    public void setIloscKamieni(int iloscKamieni) {
+        this.iloscKamieni = iloscKamieni;
+    }
+
+    public int getIloscKamieniPewnych() {
+        return iloscKamieniPewnych;
+    }
+
+    public void setIloscKamieniPewnych(int iloscKamieniPewnych) {
+        this.iloscKamieniPewnych = iloscKamieniPewnych;
+    }
+
+    public int getIloscKluczy() {
+        return iloscKluczy;
+    }
+
+    public void setIloscKluczy(int iloscKluczy) {
+        this.iloscKluczy = iloscKluczy;
+    }
+
+    public int getIloscMonumentow() {
+        return iloscMonumentow;
+    }
+
+    public void setIloscMonumentow(int iloscMonumentow) {
+        this.iloscMonumentow = iloscMonumentow;
+    }
+
+    public int getIleTrzebaZabic() {
+        return ileTrzebaZabic;
+    }
+
+    public void setIleTrzebaZabic(int ileTrzebaZabic) {
+        this.ileTrzebaZabic = ileTrzebaZabic;
     }
 
     public int getOnline() {

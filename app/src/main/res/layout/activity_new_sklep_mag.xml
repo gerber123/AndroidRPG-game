@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/tlo"
+    android:background="@drawable/shopbg"
     tools:context="pl.marcinos.expfor2.Mag.Menu.NewSklepMag">
     <HorizontalScrollView
         android:layout_width="match_parent"

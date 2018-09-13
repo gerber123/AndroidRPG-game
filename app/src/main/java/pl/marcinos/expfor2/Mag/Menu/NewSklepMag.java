@@ -49,13 +49,13 @@ public class NewSklepMag extends AppCompatActivity {
         textMonument=(TextView)findViewById(R.id.textMonument);
         textKlucz=(TextView)findViewById(R.id.textKlucz);
 
-        textKlucz.setText("Klucz: " + mag.klucz);
+        textKlucz.setText("Klucz: " + mag.getIloscKluczy());
 
-        textMonument.setText("Twoje monumenty: " + mag.odlamek);
+        textMonument.setText("Monumenty: " + mag.getIloscMonumentow());
 
 
         textGold.setText("Twoje złoto: " + mag.hajs);
-        textItem.setText("Twoje itemy: " + mag.drop);
+        textItem.setText("Kamień: " + mag.getIloscKamieni()+" Diamenty: "+mag.getIloscKamieniPewnych());
         buttonEq = (Button) findViewById(R.id.buttonEq);
         buttonBandaz=(Button)findViewById(R.id.buttonBandaz);
 
@@ -90,7 +90,7 @@ public class NewSklepMag extends AppCompatActivity {
         buttonWymien.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Sklep.kamien(mag, v, textItem);
+                Sklep.kamien(mag, v, textItem,textGold);
             }
         });
         Sklep.sprawdzenieEQWymag(mag,textLvl,kosztEQ);
@@ -106,7 +106,7 @@ public class NewSklepMag extends AppCompatActivity {
                         Sklep.buyEqInt(mag, maghp, v, textGold,textMonument);
                         Snackbar.make(v, "Kupiłeś Nowy ekwipunek", Snackbar.LENGTH_SHORT).setActionTextColor(Color.RED).show();
 
-                    } else if (mag.sett == 3&&mag.lvl>=30&&mag.odlamek.equalsIgnoreCase("Antyczny fragment")) {
+                    } else if (mag.sett == 3&&mag.lvl>=30&&mag.getIloscMonumentow()>=1) {
                         Sklep.buyEqInt(mag, maghp, v, textGold,textMonument);
                         Snackbar.make(v,"Kupiłeś nowe wyposażenie, Atak i Życie rośnie",Snackbar.LENGTH_LONG).setDuration(3000).setActionTextColor(Color.RED).show();
 

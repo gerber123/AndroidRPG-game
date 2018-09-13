@@ -148,6 +148,13 @@ public class Potwory
         this.atk=atk;
     }
 
+    Potwory(int obrona, double atk,int hajs)
+    {
+        this.hp=hp;
+        this.atk=atk;
+        this.hajs=hajs;
+    }
+
 
     public String getName() {
         return name;
@@ -157,10 +164,14 @@ public class Potwory
         return hp+"";
     }
 
-    public String getAtk() {
+    public String getAtkDoListy() {
         return atk+"";
     }
 
+    public double getAtk()
+    {
+        return atk;
+    }
     public double getLvl() {
         return lvl;
     }

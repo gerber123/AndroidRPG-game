@@ -99,6 +99,8 @@ public class ArcherPostacActivity extends AppCompatActivity {
                 login.setDrop(archer.drop);
                 login.setPoziomUlepszenia(archer.poziomUlepszenia);
                 login.setExp(archer.exp);
+                login.setMana(archer.mana);
+                login.setMaxMana(archer.maxMana);
                 login.setLvl(archer.lvl);
                 login.setHajs(archer.hajs);
                 login.setOdlegloscKrytyczna(archer.odlegloscKrytyczna);
@@ -106,14 +108,20 @@ public class ArcherPostacActivity extends AppCompatActivity {
                 login.setPunktyHonoru(archer.punktyHonoru);
                 login.setKlucz(archer.klucz);
                 login.setOdlamek(archer.odlamek);
-
+                login.setProfesja(archer.profesja);
                 login.setQuest1(archer.quest1);
                 login.setQuest2(archer.quest2);
                 login.setQuest3(archer.quest3);
                 login.setQuest4(archer.quest4);
                 login.setQuest5(archer.quest5);
+                login.setPierscienVolda(archer.pierscienVolda);
+                login.setNaszyjnikTorosa(archer.naszyjnikTorosa);
+                login.setKolczykiLajamira(archer.kolczykiLajamira);
                 login.setIloscZabitychPotworów(archer.iloscZabitychPotworów);
-
+                login.setIloscKamieni(archer.getIloscKamieni());
+                login.setIloscKamieniPewnych(archer.getIloscKamieni());
+                login.setIloscMonumentow(archer.getIloscMonumentow());
+                login.setIloscKluczy(archer.getIloscKluczy());
 //
                 login.setObrona(archer.obrona);
                 login.setPoziomUlepszeniaZbroji(archer.poziomUlepszeniaZbroji);
@@ -158,7 +166,7 @@ public class ArcherPostacActivity extends AppCompatActivity {
 
 
 
-            textKlasa.setText("Twoja klasa : Archer");
+        textKlasa.setText("Twoja Profesja: "+archer.getProfesja());
             texthp.setText("Twoje życie : "+ archer.hpbohater+"/"+ archerhp.hpbohater);
             textAtk.setText("Twój atk : "+ archer.atkbohater);
             textLvl.setText("Twój lvl : "+ archer.lvl);

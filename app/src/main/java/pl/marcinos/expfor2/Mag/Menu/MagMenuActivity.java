@@ -1,33 +1,18 @@
 package pl.marcinos.expfor2.Mag.Menu;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.view.View;
-import android.widget.Toast;
 
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import pl.marcinos.expfor2.Archer.Menu.ArcherMenuActivity;
 import pl.marcinos.expfor2.Archer.Menu.ArcherRanking;
-import pl.marcinos.expfor2.Archer.Walka.Pvp.ArcherPvpRanking;
+import pl.marcinos.expfor2.Bohaterowie.Itemy;
 import pl.marcinos.expfor2.Bohaterowie.Mag;
 
 import pl.marcinos.expfor2.Mag.Walka.Walka.Pvp.MagPvpRanking;
-import pl.marcinos.expfor2.Metody.Dialog;
-import pl.marcinos.expfor2.Model.User;
-import pl.marcinos.expfor2.Paladyn.Menu.PaladynKowal;
-import pl.marcinos.expfor2.Paladyn.Menu.PaladynMenuActivity;
 import pl.marcinos.expfor2.R;
-
-import static pl.marcinos.expfor2.IntroActivity.LoginActivity.user123;
 
 
 public class MagMenuActivity extends AppCompatActivity {
@@ -36,12 +21,24 @@ public class MagMenuActivity extends AppCompatActivity {
 
     public static Mag mag = new Mag();
     public static Mag maghp = new Mag();
+    public static int uzytyPotekHp=0;
+    public static int uzytyPotekMp=0;
     CardView postac;
     CardView ekwipunek;
     CardView sklep;
     CardView przygoda;
     CardView miniGra;
     CardView pvp;
+    public static Itemy kamien = new Itemy("Kamien","1500",mag.getIloscKamieni(),R.drawable.kamien,"Magiczny Kamień który umożliwa ulepszanie wyposażenia");
+    public static Itemy kamienPewny = new Itemy("Diament","2300",mag.getIloscKamieniPewnych(),R.drawable.magicznykamien,"Antyczny kamień który umożliwia ulepszenie wyposażenia");
+    public static Itemy antycznyFragment = new Itemy("Monument","1500",mag.getIloscMonumentow(),R.drawable.artefakt,"Artefakt umożliwiający uzyskać najlepsza zbroję");
+    public static Itemy klucz = new Itemy("Klucz","1500",mag.getIloscKluczy(),R.drawable.key,"Klucz pozwalający wejśc do jamy Antharasa");
+    public static Itemy zloto = new Itemy("Gold"," ",mag.getHajs(),R.drawable.redball," ");
+    public static Itemy set = new Itemy("Set"," ",mag.getSett(),R.drawable.redball,"Zbroja pozwalająca Ci przetrwać na polu bitwy");
+    public static Itemy bron = new Itemy("Wep"," ",mag.getSett(),R.drawable.redball,"Wyposażenie pozwalające Ci pokonywać potwory");
+    public static Itemy kolczykLajamira = new Itemy("Kolczyk Lajamira"," ",mag.getKolczykiLajamira(),R.drawable.necklace,"Kolczyki Lajamira, dodają Twoim Umięjtnośćia o 200 mocy przy użyciu umięjtnośći oraz zwiększają Twoją szanse krytyczna ");
+    public static Itemy pierscienVolda = new Itemy("Pierścień Volda"," ",mag.getPierscienVolda(),R.drawable.voldring,"Pierścień Volda, Vold Ofiaruję Ci Pierścień który powoduje że Twoje ciosy są precyzyjniesze a siła krytyczna zwiększa się o 200, oraz atak o 250");
+    public static Itemy naszyjnikTorosa = new Itemy("Naszyjnik Torosa"," ",mag.getNaszyjnikTorosa(),R.drawable.voldearring,"Naszyjnik Torosa, który ofiaruje Ci za bycie honorowym walecznym przeciwnikiem. Dodaje Ci 300 Pancerza i 300 punktów Życia");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +48,20 @@ public class MagMenuActivity extends AppCompatActivity {
         postac=(CardView)findViewById(R.id.postac);
 
         ekwipunek=(CardView)findViewById(R.id.ekwipunek);
+
+        if(mag.getProfesja().equalsIgnoreCase("ogien"))
+        {
+            mag.skillDamage=780;
+        }
+        if(mag.getProfesja().equalsIgnoreCase("woda"))
+        {
+            mag.skillDamage=320;
+        }
+        if(mag.getProfesja().equalsIgnoreCase("brak"))
+        {
+            mag.skillDamage=50;
+        }
+
         postac.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,13 +78,13 @@ public class MagMenuActivity extends AppCompatActivity {
             }
         });
 
-        sklep = (CardView) findViewById(R.id.sklep);
+        sklep = (CardView) findViewById(R.id.karczma);
         sklep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(MagMenuActivity.this,MagKarczma.class);
+                startActivity(intent);
 
-                    Intent intent = new Intent(MagMenuActivity.this,NewSklepMag.class);
-                    startActivity(intent);
 
 
 

@@ -6,23 +6,16 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import pl.marcinos.expfor2.Archer.Menu.ArcherMenuActivity;
-import pl.marcinos.expfor2.Archer.Menu.ArcherWyborPoziomuActivity;
 import pl.marcinos.expfor2.Archer.Walka.Walka.ArcherKot;
 import pl.marcinos.expfor2.Archer.Walka.Walka.ArcherSzkielet;
 import pl.marcinos.expfor2.Archer.Walka.Walka.ArcherWilkor;
 import pl.marcinos.expfor2.Archer.Walka.Walka.ArcherZombie;
 import pl.marcinos.expfor2.Mag.Walka.Walka.Walka.MagKot;
-import pl.marcinos.expfor2.Mag.Walka.Walka.Walka.MagSzkielet;
-import pl.marcinos.expfor2.Mag.Walka.Walka.Walka.MagWilkor;
-import pl.marcinos.expfor2.Mag.Walka.Walka.Walka.MagZombie;
-import pl.marcinos.expfor2.Mag.Walka.Walka.WyborPrzeciwnika.MagWyborJeden;
-import pl.marcinos.expfor2.Paladyn.Menu.PaladynMenuActivity;
 import pl.marcinos.expfor2.Potwory.Kot;
 import pl.marcinos.expfor2.Potwory.Potwory;
 import pl.marcinos.expfor2.Potwory.Szkielet;

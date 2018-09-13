@@ -132,7 +132,7 @@ public void ustawPrzeciwnika(final User user)
         public void onDataChange(DataSnapshot dataSnapshot)
         {
             User login =dataSnapshot.child(user.getUserName()).getValue(User.class);
-
+            przeciwnikpvp.setObrona(login.getObrona());
             przeciwnikpvp.setAtk(login.getAtkbohater());
             przeciwnikpvp.setHp(login.getHpbohater());
             przeciwnikpvphp.setHp(login.getMaxhp());
@@ -140,7 +140,7 @@ public void ustawPrzeciwnika(final User user)
             przeciwnikpvp.setHajs(login.getHajs());
             przeciwnikpvp.setNazwaPrzeciwnika(login.getUserName());
             przeciwnikpvp.setPunktyHonoruPvp(login.getPunktyHonoru());
-            przeciwnikpvp.setObrona(login.getObrona());
+
 
             przeciwnikpvp.setOdlegloscKrytyczna(login.odlegloscKrytyczna);
             przeciwnikpvp.setAtakcritical(login.atakcritical);

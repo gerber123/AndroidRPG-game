@@ -1,9 +1,6 @@
 package pl.marcinos.expfor2.Potwory;
 
-import android.media.Image;
 import android.widget.ImageView;
-
-import pl.marcinos.expfor2.R;
 
 /**
  * Created by marci on 08.03.2018.
@@ -50,8 +47,8 @@ public class Kot extends Potwory
     }
 
     @Override
-    public String getAtk() {
-        return super.getAtk();
+    public String getAtkDoListy() {
+        return super.getAtkDoListy();
     }
 
     @Override

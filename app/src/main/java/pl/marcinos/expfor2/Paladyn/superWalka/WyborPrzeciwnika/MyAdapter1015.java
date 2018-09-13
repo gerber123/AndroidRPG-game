@@ -66,7 +66,7 @@ public class MyAdapter1015 extends BaseAdapter {
 
         viewHolder.name.setText(potworyList.get(position).getName());
         viewHolder.hp.setText("Hp: " + potworyList.get(position).getHp());
-        viewHolder.atk.setText("Atk: " + potworyList.get(position).getAtk());
+        viewHolder.atk.setText("Atk: " + potworyList.get(position).getAtkDoListy());
         viewHolder.lvl.setText("Lvl:" + potworyList.get(position).getLvl());
 
 

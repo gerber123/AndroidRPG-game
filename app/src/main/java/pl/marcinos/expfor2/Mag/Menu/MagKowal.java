@@ -1,6 +1,9 @@
 package pl.marcinos.expfor2.Mag.Menu;
 
+import android.content.DialogInterface;
 import android.os.CountDownTimer;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,6 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import pl.marcinos.expfor2.Metody.Dialog;
 import pl.marcinos.expfor2.Metody.Set;
 import pl.marcinos.expfor2.Metody.Sklep;
 import pl.marcinos.expfor2.Model.User;
@@ -23,6 +27,7 @@ import pl.marcinos.expfor2.R;
 import static pl.marcinos.expfor2.IntroActivity.LoginActivity.user123;
 import static pl.marcinos.expfor2.Mag.Menu.MagMenuActivity.mag;
 import static pl.marcinos.expfor2.Mag.Menu.MagMenuActivity.maghp;
+import static pl.marcinos.expfor2.Metody.Dialog.score;
 import static pl.marcinos.expfor2.Paladyn.Menu.PaladynMenuActivity.paladyn;
 
 public class MagKowal extends AppCompatActivity {
@@ -55,7 +60,7 @@ public class MagKowal extends AppCompatActivity {
         textItemm = (TextView) findViewById(R.id.textItemm);
         textBron = (TextView) findViewById(R.id.textBron);
         textGold.setText("Twoje złoto: " + mag.hajs);
-        textItemm.setText("Twoje itemy: " + mag.drop);
+        textItemm.setText("Kamienie: " + mag.iloscKamieni+" Diamenty: "+mag.getIloscKamieniPewnych());
 //        textBron.setText("Różdzka +" + mag.getPoziomUlepszenia());
         progressBar=(ProgressBar)findViewById(R.id.progressHpP);
         progressBar=(ProgressBar)findViewById(R.id.progressHpP);
@@ -87,7 +92,7 @@ public class MagKowal extends AppCompatActivity {
 //        textZbroja.setText("Zbroja +" + mag.getPoziomUlepszeniaZbroji());
         Set.zmianaNazwSetu(mag,textBron,textZbroja);
 
-        if(mag.drop.equalsIgnoreCase("kamien")||mag.drop.equalsIgnoreCase("kamienPewny"))
+        if(mag.iloscKamieniPewnych>=1||mag.iloscKamieni>=1)
         {
             buttonWymien.setEnabled(true);
         }
@@ -145,7 +150,7 @@ public class MagKowal extends AppCompatActivity {
                             {
                                 buttonUlepsz.setEnabled(true);
                             }
-                            if(mag.drop.equalsIgnoreCase("kamien")||mag.drop.equalsIgnoreCase("kamienPewny"))
+                            if(mag.iloscKamieniPewnych>=1||mag.iloscKamieni>=1)
 
                             {
                                 buttonWymien.setEnabled(true);
@@ -171,6 +176,9 @@ public class MagKowal extends AppCompatActivity {
             @Override
             public void onClick(final View v)
             {
+                if(mag.getIloscKamieniPewnych()>=1&&mag.getIloscKamieni()>=1) {
+                    Dialog.kamienLubDiamnet(mag, v);
+                }
                 buttonWymien.setEnabled(false);
                 buttonUlepsz.setEnabled(false);
                 progressBar.setProgress(0);
@@ -180,7 +188,7 @@ public class MagKowal extends AppCompatActivity {
 
                         @Override
                         public void onTick(long millisUntilFinished) {
-                            if(a==10)
+                            if(a==10&&(score==1||score==2))
                             {
                                 this.cancel();
                             }
@@ -195,8 +203,21 @@ public class MagKowal extends AppCompatActivity {
                         @Override
                         public void onFinish()
                         {
-//                            buttonUlepsz.setEnabled(true);
-//                            buttonWymien.setEnabled(true);
+
+                            if(mag.getIloscKamieni()>=1&&mag.getIloscKamieniPewnych()>=1) {
+                                Sklep.ulepszzaKamien(fail, succes, mag, maghp, v, textItemm, score);
+                                Set.zmianaNazwSetu(mag, textBron, textZbroja);
+                            }
+
+                            if(mag.getIloscKamieni()>=1&&mag.getIloscKamieniPewnych()==0) {
+                                Set.zmianaNazwSetu(mag, textBron, textZbroja);
+                                Sklep.ulepszzaKamien(fail, succes, mag, maghp, v, textItemm, 1);
+                            }
+                            if(mag.getIloscKamieniPewnych()>=1&&mag.getIloscKamieni()==0) {
+                                Sklep.ulepszzaKamien(fail, succes, mag, maghp, v, textItemm, 2);
+//                            textBron.setText("Rózdzka +" + mag.getPoziomUlepszenia());
+                                Set.zmianaNazwSetu(mag, textBron, textZbroja);
+                            }
                             if(mag.hajs<=0)
                             {
                                 buttonUlepsz.setEnabled(false);
@@ -206,7 +227,7 @@ public class MagKowal extends AppCompatActivity {
                                 buttonUlepsz.setEnabled(true);
                             }
 
-                            if(mag.drop.equalsIgnoreCase("kamien")||mag.drop.equalsIgnoreCase("kamienPewny"))
+                            if(mag.iloscKamieniPewnych>=1||mag.iloscKamieni>=1)
 
                             {
                                 buttonWymien.setEnabled(true);
@@ -215,31 +236,6 @@ public class MagKowal extends AppCompatActivity {
                             {
                                 buttonWymien.setEnabled(false);
                             }
-                            Sklep.ulepszzaKamien(fail,succes,mag,maghp,v,textItemm);
-//                            textBron.setText("Rózdzka +" + mag.getPoziomUlepszenia());
-                            Set.zmianaNazwSetu(mag,textBron,textZbroja);
-//                            users.addValueEventListener(new ValueEventListener() {
-//                                @Override
-//                                public void onDataChange(DataSnapshot dataSnapshot)
-//                                {
-//                                    User login =dataSnapshot.child(user123.getUserName()).getValue(User.class);
-//                                    login.setPoziomUlepszenia(mag.poziomUlepszenia);
-//                                    login.setHpbohater(mag.hpbohater);
-//                                    login.setHajs(mag.hajs);
-//                                    login.setAtkbohater(mag.atkbohater);
-//                                    login.setSett(mag.sett);
-//                                    login.setDrop(mag.drop);
-//                                    login.setPoziomUlepszeniaZbroji(mag.poziomUlepszeniaZbroji);
-//
-//
-//                                    users.child(user123.getUserName()).setValue(login);
-//                                }
-//
-//                                @Override
-//                                public void onCancelled(DatabaseError databaseError) {
-//
-//                                }
-//                            });
                         }
 
                     }.start();
@@ -259,7 +255,7 @@ public class MagKowal extends AppCompatActivity {
         {
             buttonUlepszZbroje.setEnabled(true);
         }
-        if(mag.drop.equalsIgnoreCase("kamien")||mag.drop.equalsIgnoreCase("kamienPewny"))
+        if(mag.iloscKamieniPewnych>=1||mag.iloscKamieni>=1)
 
         {
             buttonWymienZbroje.setEnabled(true);
@@ -300,8 +296,6 @@ public class MagKowal extends AppCompatActivity {
                         @Override
                         public void onFinish()
                         {
-//                        buttonWymien.setEnabled(true);
-//                        buttonUlepsz.setEnabled(true);
                             if(mag.hajs<=0)
                             {
                                 buttonUlepszZbroje.setEnabled(false);
@@ -313,7 +307,7 @@ public class MagKowal extends AppCompatActivity {
                             Sklep.ulepszZbroje(failZbroja,succesZbroja,mag,maghp,v,textGold);
 //                            textZbroja.setText("Zbroja +" + mag.getPoziomUlepszeniaZbroji());
                             Set.zmianaNazwSetu(mag,textBron,textZbroja);
-                            if(mag.drop.equalsIgnoreCase("kamien")||mag.drop.equalsIgnoreCase("kamienPewny"))
+                            if(mag.iloscKamieniPewnych>=1||mag.iloscKamieni>=1)
 
                             {
                                 buttonWymienZbroje.setEnabled(true);
@@ -322,28 +316,7 @@ public class MagKowal extends AppCompatActivity {
                             {
                                 buttonWymienZbroje.setEnabled(false);
                             }
-//                            users.addValueEventListener(new ValueEventListener() {
-//                                @Override
-//                                public void onDataChange(DataSnapshot dataSnapshot)
-//                                {
-//                                    User login =dataSnapshot.child(user123.getUserName()).getValue(User.class);
-////                                    login.setPoziomUlepszenia(mag.poziomUlepszenia);
-////                                    login.setHpbohater(mag.hpbohater);
-//                                    login.setHajs(mag.hajs);
-////                                    login.setAtkbohater(mag.atkbohater);
-//                                    login.setSett(mag.sett);
-//                                    login.setDrop(mag.drop);
-//                                    login.setPoziomUlepszeniaZbroji(mag.poziomUlepszeniaZbroji);
-//
-//
-//                                    users.child(user123.getUserName()).setValue(login);
-//                                }
-//
-//                                @Override
-//                                public void onCancelled(DatabaseError databaseError) {
-//
-//                                }
-//                            });
+
                         }
 
                     }.start();
@@ -357,11 +330,15 @@ public class MagKowal extends AppCompatActivity {
             @Override
             public void onClick(final View v)
             {
-
+                score=0;
+                if(mag.getIloscKamieniPewnych()>=1&&mag.getIloscKamieni()>=1) {
+                    Dialog.kamienLubDiamnet(mag, v);
+                }
                 buttonWymienZbroje.setEnabled(false);
                 buttonUlepszZbroje.setEnabled(false);
                 progressBarZbroja.setProgress(0);
                 b=0;
+
                 if(b!=10){
                     CountDownTimer t=    new CountDownTimer(1000, 100) {
 
@@ -370,8 +347,10 @@ public class MagKowal extends AppCompatActivity {
                             if(b==10)
                             {
                                 this.cancel();
+                                score=0;
                             }
-                            else {
+                            else if(b!=10) {
+
                                 b += 1;
                                 progressBarZbroja.setProgress(b);
                             }
@@ -382,51 +361,45 @@ public class MagKowal extends AppCompatActivity {
                         @Override
                         public void onFinish()
                         {
-//                            buttonUlepsz.setEnabled(true);
-//                            buttonWymien.setEnabled(true);
 
-                            Sklep.ulepszzaKamienZbroje(failZbroja,succesZbroja,mag,maghp,v,textItemm);
-//                            textZbroja.setText("Zbroja +" + mag.getPoziomUlepszeniaZbroji());
-                            Set.zmianaNazwSetu(mag,textBron,textZbroja);
-                            if(mag.hajs<=0)
+                            if(score==0)
                             {
-                                buttonUlepszZbroje.setEnabled(false);
+                                Snackbar.make(v,"Czas na decyzje minął, spróbuj jeszcze raz", Snackbar.LENGTH_LONG).show();
                             }
-                            else
-                            {
-                                buttonUlepszZbroje.setEnabled(true);
-                            }
-                            if(mag.drop.equalsIgnoreCase("kamien")||mag.drop.equalsIgnoreCase("kamienPewny"))
 
-                            {
-                                buttonWymienZbroje.setEnabled(true);
+                            if(mag.getIloscKamieni()>=1&&mag.getIloscKamieniPewnych()>=1&&(score==1||score==2)) {
+
+                                Sklep.ulepszzaKamienZbroje(failZbroja, succesZbroja, mag, maghp, v, textItemm, score);
+                                Set.zmianaNazwSetu(mag, textBron, textZbroja);
+
                             }
+
+                            if(mag.getIloscKamieni()>=1&&mag.getIloscKamieniPewnych()==0) {
+
+                                Sklep.ulepszzaKamienZbroje(failZbroja, succesZbroja, mag, maghp, v, textItemm, 1);
+                                Set.zmianaNazwSetu(mag, textBron, textZbroja);
+
+                            }
+                            if(mag.getIloscKamieniPewnych()>=1&&mag.getIloscKamieni()==0) {
+                                Sklep.ulepszzaKamienZbroje(failZbroja, succesZbroja, mag, maghp, v, textItemm, 2);
+//                            textBron.setText("Rózdzka +" + mag.getPoziomUlepszenia());
+                                Set.zmianaNazwSetu(mag, textBron, textZbroja);
+
+                            }
+                                  if(mag.iloscKamieniPewnych>=1||mag.iloscKamieni>=1)
+
+                        {
+                            buttonWymienZbroje.setEnabled(true);
+                        }
                             else
-                            {
-                                buttonWymienZbroje.setEnabled(false);
-                            }
-//                            users.addValueEventListener(new ValueEventListener() {
-//                                @Override
-//                                public void onDataChange(DataSnapshot dataSnapshot)
-//                                {
-//                                    User login =dataSnapshot.child(user123.getUserName()).getValue(User.class);
-////                                    login.setPoziomUlepszenia(mag.poziomUlepszenia);
-////                                    login.setHpbohater(mag.hpbohater);
-//                                    login.setHajs(mag.hajs);
-////                                    login.setAtkbohater(mag.atkbohater);
-//                                    login.setSett(mag.sett);
-//                                    login.setDrop(mag.drop);
-//                                    login.setPoziomUlepszeniaZbroji(mag.poziomUlepszeniaZbroji);
-//
-//
-//                                    users.child(user123.getUserName()).setValue(login);
-//                                }
-//
-//                                @Override
-//                                public void onCancelled(DatabaseError databaseError) {
-//
-//                                }
-//                            });
+                        {
+                            buttonWymienZbroje.setEnabled(false);
+                        }
+                        if(mag.hajs>=150)
+                        {
+                            buttonUlepszZbroje.setEnabled(true);
+                        }
+
                         }
 
                     }.start();

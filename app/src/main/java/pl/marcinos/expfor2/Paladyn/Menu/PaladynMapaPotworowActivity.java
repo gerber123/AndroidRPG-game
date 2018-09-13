@@ -227,15 +227,13 @@ public class PaladynMapaPotworowActivity extends AppCompatActivity {
 
 
         alertDialog.setTitle("Jaskinia Zła");
-//        alertDialog.setMessage("oooo");
-
         LayoutInflater inflater = this.getLayoutInflater();
         final View wejscie = inflater.inflate(R.layout.wejscie_smok, null);
 
 
 
         klucz=(TextView)wejscie.findViewById(R.id.klucz);
-        klucz.setText("Klucz: "+x.klucz);
+        klucz.setText("Klucz: "+x.getIloscKluczy());
 
         alertDialog.setView(wejscie);
 
@@ -248,12 +246,12 @@ public class PaladynMapaPotworowActivity extends AppCompatActivity {
         alertDialog.setPositiveButton("Wejdź", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                if(paladyn.getKlucz().equalsIgnoreCase("posiadany")&&paladyn.lvl>=30)
+                if(paladyn.getIloscKluczy()>=1&&paladyn.lvl>=30)
                 {
                     Intent intent = new Intent(PaladynMapaPotworowActivity.this, PaladynBoss.class);
                     startActivity(intent);
                     PaladynMapaPotworowActivity.this.finish();
-                    paladyn.klucz="brak";
+                    paladyn.iloscKluczy-=1;
                 }
                 else
                 {

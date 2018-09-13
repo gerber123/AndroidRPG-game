@@ -2,6 +2,7 @@ package pl.marcinos.expfor2.Questy;
 
 import android.graphics.Color;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -81,7 +82,7 @@ public class Questy
         }
     }
 
-    public static void stanQuesta(Bohaterowie x,TextView WzgorzaText,TextView zatrutaWyspa,TextView KatakubmyText,TextView lodowiecGeista,TextView KraniecSwiatow)
+    public static void stanQuesta(Button q1, Button q2, Button q3, Button q4, Button q5, Bohaterowie x, TextView WzgorzaText, TextView zatrutaWyspa, TextView KatakubmyText, TextView lodowiecGeista, TextView KraniecSwiatow)
     {
         if(x.quest1==0)
         {
@@ -92,6 +93,11 @@ public class Questy
         {
             WzgorzaText.setTextColor(Color.YELLOW);
             WzgorzaText.setText("Stan: W trakcie");
+            q2.setEnabled(false);
+            q3.setEnabled(false);
+            q4.setEnabled(false);
+            q5.setEnabled(false);
+
         }
         if(x.quest1==2)
         {
@@ -106,6 +112,11 @@ public class Questy
         {
             zatrutaWyspa.setTextColor(Color.YELLOW);
             zatrutaWyspa.setText("Stan: W trakcie");
+            q1.setEnabled(false);
+            q3.setEnabled(false);
+            q4.setEnabled(false);
+            q5.setEnabled(false);
+
         }
         if(x.quest2==2)
         {
@@ -121,6 +132,10 @@ public class Questy
         {
             KatakubmyText.setTextColor(Color.YELLOW);
             KatakubmyText.setText("Stan: W trakcie");
+            q2.setEnabled(false);
+            q1.setEnabled(false);
+            q4.setEnabled(false);
+            q5.setEnabled(false);
         }
         if(x.quest3==2)
         {
@@ -135,6 +150,11 @@ public class Questy
         {
             lodowiecGeista.setTextColor(Color.YELLOW);
             lodowiecGeista.setText("Stan: W trakcie");
+            q2.setEnabled(false);
+            q3.setEnabled(false);
+            q4.setEnabled(false);
+            q1.setEnabled(false);
+
         }
         if(x.quest5==2)
         {
@@ -149,11 +169,43 @@ public class Questy
         {
             KraniecSwiatow.setTextColor(Color.YELLOW);
             KraniecSwiatow.setText("Stan: W trakcie");
+            q2.setEnabled(false);
+            q3.setEnabled(false);
+            q1.setEnabled(false);
+            q5.setEnabled(false);
+
         }
         if(x.quest4==2)
         {
             KraniecSwiatow.setTextColor(Color.GREEN);
             KraniecSwiatow.setText("Stan: Wykonany");
+        }
+    }
+    public static void sprawdzMisje(Button q1,Button q2, Button q3, Button q4, Button q5,Bohaterowie x)
+    {
+        if(x.quest1==2)
+        {
+            q1.setEnabled(true);
+
+        }
+        if(x.quest2==2)
+        {
+            q2.setEnabled(true);
+        }
+        if(x.quest3==2)
+        {
+            q3.setEnabled(true);
+
+        }
+        if(x.quest4==2)
+        {
+            q4.setEnabled(true);
+
+        }
+        if(x.quest5==2)
+        {
+            q5.setEnabled(true);
+
         }
     }
     public void wykonanoMisje(Bohaterowie x, Potwory y,View v,Questy quest,TextView StanQuestaText)

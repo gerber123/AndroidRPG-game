@@ -13,18 +13,25 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import pl.marcinos.expfor2.Mag.Menu.MagMenuActivity;
+import pl.marcinos.expfor2.Mag.Menu.SetLevels;
 import pl.marcinos.expfor2.Metody.AtakPotwora;
 import pl.marcinos.expfor2.Metody.ButtonPotkow;
 import pl.marcinos.expfor2.Metody.RegeneracjaPotworow;
 import pl.marcinos.expfor2.Metody.Set;
+import pl.marcinos.expfor2.Metody.Skille;
 import pl.marcinos.expfor2.Metody.Walka;
 import pl.marcinos.expfor2.R;
 
+import static android.view.View.VISIBLE;
 import static pl.marcinos.expfor2.Mag.Menu.MagMenuActivity.mag;
 import static pl.marcinos.expfor2.Mag.Menu.MagMenuActivity.maghp;
 
+import static pl.marcinos.expfor2.Mag.Menu.MagMenuActivity.uzytyPotekHp;
+import static pl.marcinos.expfor2.Mag.Menu.MagMenuActivity.uzytyPotekMp;
 import static pl.marcinos.expfor2.Potwory.Potwory.fishman;
 import static pl.marcinos.expfor2.Potwory.Potwory.fishmanhp;
+import static pl.marcinos.expfor2.Potwory.Potwory.guard;
+import static pl.marcinos.expfor2.Potwory.Potwory.guardhp;
 import static pl.marcinos.expfor2.Potwory.Potwory.hellgate;
 import static pl.marcinos.expfor2.Potwory.Potwory.hellgatehp;
 import static pl.marcinos.expfor2.Potwory.Potwory.kot;
@@ -47,8 +54,8 @@ import static pl.marcinos.expfor2.Potwory.Potwory.zombie;
 import static pl.marcinos.expfor2.Potwory.Potwory.zombiehp;
 
 public class MagFishman extends AppCompatActivity {
-    ImageButton buttonWalcz;
-    ImageButton buttonSkill;
+    ImageView buttonWalcz;
+    ImageView buttonSkill;
     ImageButton buttonPotek;
     ImageView imageTimer;
     ImageView imageStopPotek;
@@ -74,8 +81,10 @@ public class MagFishman extends AppCompatActivity {
     ImageView imageDatak;
     ImageView imageBD;
     ImageView imageSkillIkon;
-
-
+    ImageView hpPotion;
+    ImageView manaPotion;
+    TextView textMana;
+    ProgressBar progresMana;
 
 
     ImageView anim;
@@ -86,6 +95,8 @@ public class MagFishman extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mag_fishman);
+
+
         imageBcrit = (ImageView)findViewById(R.id.imageViewCrit);
 
         imageB=(ImageView)findViewById(R.id.imageB);
@@ -94,13 +105,21 @@ public class MagFishman extends AppCompatActivity {
         imageBa= (ImageView)findViewById(R.id.imageA);
         imageBskill= (ImageView)findViewById(R.id.imageBskill);
         imageBs= (ImageView)findViewById(R.id.imageS);
+
+
+
+
+
         imageBatak= (ImageView)findViewById(R.id.imageBatak);
         imageAatak= (ImageView)findViewById(R.id.imageAatak);
         imageSatak= (ImageView)findViewById(R.id.imageSatak);
-        imageTimer= (ImageView)findViewById(R.id.imageSkillTimer);
-        imageStopPotek= (ImageView)findViewById(R.id.imagePotTimer);
-        imageAtackTimer= (ImageView)findViewById(R.id.imageAtackTimer);
+
         imageSkillIkon= (ImageView)findViewById(R.id.imageSkill);
+        imageBatakuj=(ImageView)findViewById(R.id.imageBatak);
+        imageBskill=(ImageView)findViewById(R.id.imageBskill);
+        imageB= (ImageView)findViewById(R.id.imageB);
+        SetLevels.SetCheck(mag,imageB,imageBatakuj,imageBskill);
+        imageB.setVisibility(VISIBLE);
         buttonBack=(ImageButton) findViewById(R.id.ButtonBack);
         buttonBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -110,91 +129,92 @@ public class MagFishman extends AppCompatActivity {
                 MagFishman.this.finish();
             }
         });
-        if(mag.sett==1)
-        {
-            imageBatakuj=(ImageView)findViewById(R.id.imageBatak);
-            imageBskill=(ImageView)findViewById(R.id.imageBskill);
-            imageB= (ImageView)findViewById(R.id.imageB);
-
-        }
-        else if(mag.sett==2)
-        {
-            imageBatakuj=(ImageView)findViewById(R.id.imageAatak);
-            imageB= (ImageView)findViewById(R.id.imageA);
-            imageBskill=(ImageView)findViewById(R.id.imageAskill);
-        }
-        else if(mag.sett==3)
-        {
-            imageBatakuj=(ImageView)findViewById(R.id.imageSatak);
-            imageB= (ImageView)findViewById(R.id.imageS);
-            imageBskill=(ImageView)findViewById(R.id.imageSskill);
-        }
-        else if(mag.sett==4)
-        {
-            imageBatakuj=(ImageView)findViewById(R.id.imageDatak);
-            imageB= (ImageView)findViewById(R.id.imageD);
-            imageBskill=(ImageView)findViewById(R.id.imageDskill);
-        }
 
         imageBD= (ImageView)findViewById(R.id.imageD);
         imageDskill= (ImageView)findViewById(R.id.imageDskill);
         imageDatak= (ImageView)findViewById(R.id.imageDatak);
-        Set.zmianaSetuWalkaIntSetD(mag,imageBb,imageBa,imageBs,imageBD);
-
+        imageP= (ImageView)findViewById(R.id.imageView4);
+        anim = (ImageView)findViewById(R.id.imageView5);
 
         textHpB=(TextView)findViewById(R.id.textHpB);
         textHpP=(TextView)findViewById(R.id.textHpP);
-
-        imageP= (ImageView)findViewById(R.id.imageView4);
-        anim = (ImageView)findViewById(R.id.imageView5);
+        textMana=(TextView)findViewById(R.id.manaText);
+        progresMana=(ProgressBar)findViewById(R.id.ManaBar);
+        progresMana.setMax(mag.maxMana);
+        progresMana.setProgress(mag.mana);
+        textMana.setText("Mana: "+mag.mana);
         progresHpB=(ProgressBar)findViewById(R.id.progressHpB);
         progresHpP=(ProgressBar)findViewById(R.id.progressHpP);
         progresHpB.setMax(maghp.hpbohater);
-        progresHpP.setMax(fishmanhp.hp);
+
+        progresHpP.setMax(kothp.hp);
         progresHpB.setProgress(mag.hpbohater);
-        progresHpP.setProgress(fishman.hp);
+        progresHpP.setProgress(kot.hp);
+
         View v =this.findViewById(android.R.id.content).getRootView();
-        AtakPotwora.AtakPotwora(imageB,imageBatakuj,imageP,mag,fishman,fishmanhp,textHpB,textHpP,progresHpB,progresHpP,buttonWalcz,buttonSkill,buttonPotek);
+        hpPotion= (ImageView)findViewById(R.id.hpPotion);
+        manaPotion=(ImageView)findViewById(R.id.manaPotion);
+        hpPotion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mag.hpbohater+=300;
+                progresHpB.setProgress(mag.hpbohater);
+                textHpB.setText("Hp: "+mag.hpbohater+" ");
+                hpPotion.setVisibility(View.INVISIBLE);
+                hpPotion.setEnabled(false);
+            }
+        });
+        manaPotion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                mag.mana+=300;
+                progresMana.setProgress(mag.mana);
+                textMana.setText("Mana: "+mag.mana+" ");
+                manaPotion.setVisibility(View.INVISIBLE);
+                manaPotion.setEnabled(false);
+            }
+        });
+        AtakPotwora.AtakPotworaPotkiTest(hpPotion,manaPotion,imageB,imageBatakuj,imageP,mag,fishman,fishmanhp,textHpB,textHpP,progresHpB,progresHpP,buttonWalcz,buttonSkill);
 
 
 
         textHpB.setText("Hp bohatera: "+mag.hpbohater);
-        textHpP.setText("Hp Potwora: "+fishman.hp);
-        buttonWalcz=(ImageButton)findViewById(R.id.buttonWalcz);
+        textHpP.setText("Hp Potwora: "+kot.hp);
+
+        buttonWalcz=(ImageView)findViewById(R.id.buttonWalcz);
         buttonWalcz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Walka.walczzPotworem(imageAtackTimer,imageBcrit,anim,imageBatakuj,imageB,imageP,mag,maghp,fishman,fishmanhp,textHpB,textHpP,v,buttonWalcz);
+                Walka.walczzPotworemTest(imageBcrit,anim,imageBatakuj,imageB,imageP,mag,maghp,fishman,fishmanhp,textHpB,textHpP,v,buttonWalcz);
 
-
+                textMana.setText("Mana: "+mag.mana+" ");
                 progresHpB.setProgress(mag.hpbohater);
-                progresHpP.setProgress(fishman.hp);
+                progresHpP.setProgress(kot.hp);
                 if(mag.hpbohater<=0)
                 {
 
                     Snackbar.make(v,"Zginąłeś, wróć do menu",Snackbar.LENGTH_SHORT);
                 }
-                if(fishman.hp<=0)
+                if(kot.hp<=0)
                 {
-                    if(mag.quest5==1)
-                    {
-                        mag.iloscZabitychPotworów+=1;
-                    }
                     nextFight(v);
                 }
             }
         });
-        buttonSkill=(ImageButton)findViewById(R.id.buttonSkill);
+        buttonSkill=(ImageView)findViewById(R.id.buttonSkill);
+        Skille.magDifferenceTest(buttonSkill);
         buttonSkill.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                Walka.walnijzeskilla(imageTimer,imageBcrit,imageSkillIkon,imageBskill,imageB,imageP,mag,maghp,fishman,fishmanhp,textHpB,textHpP,v,buttonSkill);
+                Walka.walnijzeskillaTest(imageBcrit,imageSkillIkon,imageBskill,imageB,imageP,mag,maghp,fishman,fishmanhp,textHpB,textHpP,v,buttonSkill);
 
 
                 progresHpB.setProgress(mag.hpbohater);
                 progresHpP.setProgress(fishman.hp);
+                progresMana.setProgress(mag.mana);
+                textMana.setText(mag.mana+" ");
                 if(mag.hpbohater<=0)
                 {
 
@@ -202,37 +222,29 @@ public class MagFishman extends AppCompatActivity {
                 }
                 if(fishman.hp<=0)
                 {
-                    if(mag.quest5==1)
-                    {
-                        mag.iloscZabitychPotworów+=1;
-                    }
                     nextFight(v);
+                    if(mag.quest1==1) {
+
+                        mag.iloscZabitychPotworów += 1;
+                    }
                 }
             }
         });
-        buttonPotek=(ImageButton)findViewById(R.id.buttonPotek);
-
-        buttonPotek.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
 
 
+        if(fishman.hp<=0)
+        {
+            nextFight(v);
+        }
 
-//                   textHpB.setText(archer.hpbohater);
-
-
-                ButtonPotkow.uzyjPota(mag,maghp,imageStopPotek,buttonPotek,textHpB,progresHpB);
-
-            }
-        });
-
-    }
+    }      @Override
     public void onBackPressed()
     {
-        Intent intent = new Intent(MagFishman.this,MagTurtle.class);
+        Intent intent = new Intent(MagFishman.this,MagMenuActivity.class);
         startActivity(intent);
         MagFishman.this.finish();
     }
+
     public void nextFight(View v) {
         final AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(v.getContext());
         alertDialogBuilder.setTitle("Potwór Pokonany !!!");
@@ -245,9 +257,10 @@ public class MagFishman extends AppCompatActivity {
                 Intent intent = new Intent(MagFishman.this,MagTurtle.class);
                 startActivity(intent);
                 MagFishman.this.finish();
-                RegeneracjaPotworow.Regenereuj(fishman,fishmanhp,hellgate,hellgatehp,kot,kothp,mnich,mnichhp,moskit,moskithp,orc,orchp,rycerz,rycerzhp,stroz,strozhp,szkielet,szkielethp,wilkor,wilkorhp,zombie,zombiehp);
+                RegeneracjaPotworow.Regenereuj(guard,guardhp,hellgate,hellgatehp,kot,kothp,mnich,mnichhp,moskit,moskithp,orc,orchp,rycerz,rycerzhp,stroz,strozhp,szkielet,szkielethp,wilkor,wilkorhp,zombie,zombiehp);
 
-
+                uzytyPotekHp=0;
+                uzytyPotekMp=0;
 
 
             }
@@ -257,6 +270,9 @@ public class MagFishman extends AppCompatActivity {
             public void onClick(DialogInterface dialog, int which) {
 
                 onBackPressed();
+
+                uzytyPotekHp=0;
+                uzytyPotekMp=0;
             }
         });
         alertDialogBuilder.setCancelable(false);

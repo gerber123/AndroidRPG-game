@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/honorplace"
+    tools:context=".Paladyn.Karczma.PaladynHonor">
+
+
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:id="@+id/relativeLayout10"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:weightSum="10"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0">
+                <android.support.v7.widget.CardView
+                    android:id="@+id/PierscienVolda"
+                    android:layout_width="330dp"
+                    android:layout_height="490dp"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_rowWeight="1"
+                    app:cardBackgroundColor="@color/cardview_dark_background"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/voldring" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+
+                            android:text="Pierścień Volda"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/colorPodswietlenia"
+                            android:textSize="35sp"
+
+
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+
+                            android:text="100 Honoru"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/colorForTheExp"
+                            android:textSize="25sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+
+                            android:text="Vold Ofiaruję Ci Pierścień który powoduje że Twoje ciosy są precyzyjniesze a siła krytyczna zwiększa się o 200, oraz atak o 250"
+                            android:gravity="center_horizontal"
+                            android:textAlignment="gravity"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorForTheExp"
+                            android:textSize="15sp" />
+
+                        <Button
+                            android:id="@+id/buttonPierscienVolda"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_width="100dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_height="wrap_content"
+                            android:text="Wymień" />
+
+                    </LinearLayout>
+
+
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    android:id="@+id/KolczykiLajamira"
+                    android:layout_width="330dp"
+                    android:layout_height="490dp"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_rowWeight="1"
+                    app:cardBackgroundColor="@color/cardview_dark_background"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/voldearring" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+
+                            android:text="Kolczyk Lajamira"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/colorPodswietlenia"
+                            android:textSize="35sp"
+
+
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+
+                            android:text="100 Honoru"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/colorForTheExp"
+                            android:textSize="25sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+
+                            android:text="Kolczyki Lajamira dodają Twoim Umięjtnośćia 200 mocy oraz zwiększają Twoją szanse krytyczna "
+                            android:gravity="center_horizontal"
+                            android:textAlignment="gravity"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorForTheExp"
+                            android:textSize="15sp" />
+
+                        <Button
+                            android:id="@+id/buttonKolczykiLajamira"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_width="100dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_height="wrap_content"
+                            android:text="Wymień" />
+
+                    </LinearLayout>
+
+
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    android:id="@+id/NaszyjnikTorosa"
+                    android:layout_width="330dp"
+                    android:layout_height="490dp"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_rowWeight="1"
+                    app:cardBackgroundColor="@color/cardview_dark_background"
+                    app:cardCornerRadius="14dp"
+                    app:cardElevation="8dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical|center_horizontal"
+                        android:layout_margin="16dp"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:src="@drawable/necklace" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+
+                            android:text="Naszyjnik Torosa"
+                            android:textAlignment="gravity"
+                            android:textColor="@color/colorPodswietlenia"
+                            android:textSize="35sp"
+
+
+                            />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+
+                            android:text="100 Honoru"
+                            android:textAlignment="gravity"
+
+                            android:textColor="@color/colorForTheExp"
+                            android:textSize="25sp" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+
+                            android:text="Naszyjnik Torosa, zdobyty za bycie walecznym wojownikiem. Dodaje Ci 300 Pancerza i 300 punktów Życia"
+                            android:gravity="center_horizontal"
+                            android:textAlignment="gravity"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorForTheExp"
+                            android:textSize="15sp" />
+
+                        <Button
+                            android:id="@+id/buttonNaszyjnikTorosa"
+                            style="@style/Widget.AppCompat.Button.Colored"
+                            android:layout_width="100dp"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_height="wrap_content"
+                            android:text="Wymień" />
+
+                    </LinearLayout>
+
+
+                </android.support.v7.widget.CardView>
+
+
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+            <TextView
+                android:id="@+id/textHonor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+
+
+                android:text="Twój honor: "
+
+
+                android:padding="5dp"
+                android:textColor="@color/colorAccent" />
+
+
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>

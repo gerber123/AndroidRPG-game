@@ -220,7 +220,7 @@ public class ArcherMapaPotworowActivity extends AppCompatActivity {
 
 
         klucz=(TextView)wejscie.findViewById(R.id.klucz);
-        klucz.setText("Klucz: "+x.klucz);
+        klucz.setText("Klucz: "+x.iloscKluczy);
 
         alertDialog.setView(wejscie);
 
@@ -233,14 +233,13 @@ public class ArcherMapaPotworowActivity extends AppCompatActivity {
         alertDialog.setPositiveButton("Wejdź", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                if(archer.getKlucz().equalsIgnoreCase("posiadany")&&archer.lvl>=30)
+                if(archer.iloscKluczy>=1)
                 {
                     Intent intent = new Intent(ArcherMapaPotworowActivity.this, ArcherBoss.class);
                     startActivity(intent);
                     ArcherMapaPotworowActivity.this.finish();
-                    archer.klucz="brak";
+                    archer.iloscKluczy-=1;
                 }
-
                 else
                 {
                     Toast.makeText(getApplicationContext(),"Niemasz klucza lub LVL",Toast.LENGTH_LONG).show();

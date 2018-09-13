@@ -14,5 +14,7 @@
     <color name="colorCardVieww">#595957</color>
     <color name="colorCardQuest">#8a868635</color>
 
+
     <color name="black_overlay">#66000000</color>
+    <color name="light_overlay">#66efef00</color>
 </resources>
